@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+	title="About Me"
+	description="Lorem ipsum dolor sit amet"
+>
+  <div class='container'>
+		<main class='prose text-lg dark:prose-invert'>
+      <article>
+        <div class='w-full md:flex md:items-center gap-16 mb-10'>
+          <div class="text-pretty leading-9">
+            <h1 class="text-4xl font-bold mb-4">Impressum </h1>
+            <p>Lukas Yair Lehmann<br />
+              {import.meta.env.PUBLIC_ADDRESS}
+            </p>
+            <h2>Contact</h2>
+            <p>Phone: {import.meta.env.PUBLIC_PHONE_NUMBER}<br />
+            E-Mail: {import.meta.env.PUBLIC_EMAIL}</p>
+            <p>Source: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
+        </article>
+      </article>
+    </main>
+  </div>
+</BaseLayout>
