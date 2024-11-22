@@ -1,0 +1,139 @@
+{
+	"editor.cursorBlinking": "solid",
+	"editor.cursorStyle": "block",
+	"window.titleBarStyle": "native",
+	"window.customTitleBarVisibility": "never",
+	"window.title": "${activeEditorMedium}",
+	"files.trimTrailingWhitespace": true,
+	"explorer.confirmDelete": false,
+	"explorer.compactFolders": false,
+	"workbench.colorTheme": "GitHub Dark Default",
+	"workbench.sideBar.location": "right",
+	"workbench.startupEditor": "none",
+	"workbench.statusBar.visible": true,
+	"workbench.editor.enablePreview": false,
+	"workbench.editor.restoreViewState": true,
+	"terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+	"editor.find.addExtraSpaceOnTop": true,
+	"editor.padding.top": 36,
+	"editor.stickyScroll.enabled": false,
+	"editor.fontFamily": "Hack Nerd Font Mono",
+	"editor.fontSize": 14,
+	"editor.tabSize": 2,
+	"editor.lineHeight": 0,
+	"editor.insertSpaces": true,
+	"editor.detectIndentation": false,
+	"editor.renderWhitespace": "none",
+	"editor.scrollBeyondLastLine": true,
+	"editor.minimap.enabled": false,
+	"editor.lineNumbers": "relative",
+	"editor.find.seedSearchStringFromSelection": "never",
+	"breadcrumbs.enabled": false,
+	// line highlight
+	"editor.renderLineHighlight": "all",
+	"workbench.colorCustomizations": {
+		"editor.lineHighlightBackground": "#223851"
+	},
+	// syntax highlighting
+	"files.associations": {
+		".env*": "makefile"
+	},
+	// prettier
+	"prettier.singleQuote": true,
+	"prettier.printWidth": 70,
+	"editor.formatOnSave": true,
+	"[markdown]": {
+		"editor.formatOnSave": false
+	},
+	"[javascript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascriptreact]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"prettier.documentSelectors": ["**/*.astro"],
+	"[astro]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	// eslint
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "explicit",
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.tslint": "explicit",
+		"source.addMissingImports": "explicit"
+	},
+	"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+	"javascript.validate.enable": false,
+	"javascript.updateImportsOnFileMove.enabled": "prompt",
+	"typescript.updateImportsOnFileMove.enabled": "never",
+	"explorer.confirmDragAndDrop": false,
+	"js/ts.implicitProjectConfig.checkJs": true,
+	"editor.formatOnPaste": true,
+	"editor.formatOnType": true,
+	"editor.inlineSuggest.enabled": true,
+	"mui-snippets.importPaths": "second level",
+	"gitlens.advanced.messages": {
+		"suppressCommitHasNoPreviousCommitWarning": true
+	},
+	"github.copilot.enable": {
+		"*": true,
+		"plaintext": false,
+		"markdown": true,
+		"scminput": false
+	},
+	"git.openRepositoryInParentFolders": "never",
+	"workbench.activityBar.location": "hidden",
+	"typescript.preferences.autoImportFileExcludePatterns": ["@radix-ui"],
+	"cSpell.enabledFiletypes": [
+		"!asciidoc",
+		"!c",
+		"!cpp",
+		"!csharp",
+		"!css",
+		"!elixir",
+		"!erlang",
+		"!git-commit",
+		"!go",
+		"!graphql",
+		"!handlebars",
+		"!haskell",
+		"!html",
+		"!jade",
+		"!java",
+		"!javascript",
+		"!javascriptreact",
+		"!json",
+		"!jsonc",
+		"!jupyter",
+		"!less",
+		"!php",
+		"!pug",
+		"!python",
+		"!restructuredtext",
+		"!rust",
+		"!scala",
+		"!scminput",
+		"!scss",
+		"!swift",
+		"!typescript",
+		"!typescriptreact",
+		"!vue",
+		"!yaml",
+		"!yml",
+		"mdx"
+	],
+	"auto-close-tag.disableOnLanguage": [],
+	"cSpell.dictionaryDefinitions": [],
+	"cSpell.words": ["Telefon"]
+}
