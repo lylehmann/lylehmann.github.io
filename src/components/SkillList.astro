@@ -2,107 +2,118 @@
 import type { Skill } from "@src/pages/About/skills";
 
 const { skills } = Astro.props;
+
+const languageLevels = {
+  'Native': 100,
+  'Fluent': 80,
+  'Intermediate': 60,
+  'Basic': 40
+};
 ---
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-  {skills.map((skill: Skill) => (
-    <div class={`border dark:border-zinc-700 rounded-xl shadow-sm flex flex-col ${skill.image ? 'p-0' : 'p-5'}`}>
-      {skill.image ? (
-        <img src={skill.image.src} alt={skill.image.alt} class="w-full h-full object-cover" />
-      ) : skill.techStack ? (
-        <div>
-          <h3 class="font-semibold my-2">{skill.name}</h3>
-          <div class="flex flex-wrap gap-4">
-            {skill.techStack.map((item: { name: string, icon: JSX.Element }) => (
-              <div class="flex flex-col items-center">
-                <item.icon class="text-8xl" />
-                <span class="text-sm mt-2">{item.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      ) : skill.skillStack ? (
-        <div>
-          <h3 class="font-semibold my-2">{skill.name}</h3>
-          <div class="flex flex-wrap gap-2 mt-2 text-sm">
-            {skill.skillStack.map((item: { text: string }) => (
-              <span class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">{item.text}</span>
-            ))}
-          </div>
-        </div>
-      ) : skill.certifications ? (
-        <div>
-          <h3 class="font-semibold my-2">{skill.name}</h3>
-          <ul class="mt-2 text-sm">
-            {skill.certifications.map((item: { name: string, institution: string, date: string }) => (
-              <li class="mb-2">
-                <span class="font-semibold">{item.name}</span><br />
-                <span class="text-gray-600 dark:text-gray-400">{item.institution}</span><br />
-                <span class="text-gray-600 dark:text-gray-400">{item.date}</span>
+<div class="flex flex-col lg:flex-row gap-5">
+  <div class="flex flex-col gap-5 lg:w-80 order-1 lg:order-2">
+    {skills.filter(skill => skill.timeline).map((skill: Skill) => (
+      <div class={`border dark:border-zinc-700 rounded-xl shadow-sm flex flex-col ${skill.image ? 'p-0' : 'p-5'}`} key={skill.name}>
+        <div class="pt-4 pb-4">
+          <ol class="relative border-l border-gray-200 dark:border-gray-700 ml-6">
+            {skill.timeline.map((item: { date: string, text: string, svg: JSX.Element, color: string }) => (
+              <li class="mb-10 ml-6" key={item.date}>
+                <span class={`absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ${item.color}`}>
+                  <item.svg />
+                </span>
+                <span class="font-semibold">{item.date}</span><br />
+                <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">{item.text}</p>
               </li>
             ))}
-          </ul>
+          </ol>
         </div>
-      ) : skill.strength ? (
-        <div>
-          <h3 class="font-semibold my-2">{skill.name}</h3>
-          <div class="flex flex-wrap gap-2 mt-2 text-sm">
-            {skill.strength.map((item: { text: string }) => (
-              <span class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">{item.text}</span>
-            ))}
+      </div>
+    ))}
+  </div>
+  <div class="flex-1 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 order-2 lg:order-1">
+    {skills.filter(skill => !skill.timeline).map((skill: Skill) => (
+      <div class={`border dark:border-zinc-700 rounded-xl shadow-sm flex flex-col ${skill.image ? 'p-0' : 'p-5'} ${skill.name === 'Motivation' ? 'col-span-2' : ''}`} key={skill.name}>
+        {skill.techStack ? (
+          <div>
+            <h3 class="font-semibold my-2">{skill.name}</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              {skill.techStack.map((item: { name: string, icon: JSX.Element }) => (
+                <div class="flex flex-col items-center" key={item.name}>
+                  <item.icon class="text-6xl" />
+                  <span class="text-sm mt-2">{item.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      ) : skill.motivation ? (
-        <div>
-          <h3 class="font-semibold my-2">{skill.name}</h3>
-          <ul class="mt-2 text-sm">
-            {skill.motivation.map((item: { text: string }) => (
-              <li class="mb-2" innerHTML={item.text}></li>
-            ))}
-          </ul>
-        </div>
-      ) : (
-        <>
-          <div class="flex justify-between items-center">
-          </div>
-          <h3 class="font-semibold my-2">{skill.name}</h3>
-          <div class="text-zinc-600 dark:text-zinc-300 mb-4 flex-grow">
-            {skill.timeline ? (
-              <ol class="relative border-l border-gray-200 dark:border-gray-700 ml-6">
-                {skill.timeline.map((item: { date: string, text: string, svg: JSX.Element, color: string }) => (
-                  <li class="mb-10 ml-6">
-                    <span class={`absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-8 ring-white dark:ring-gray-900 ${item.color}`}>
-                      <item.svg />
-                    </span>
-                    <h4 class="flex items-center mb-1 font-semibold text-gray-900 dark:text-white">{item.date}</h4>
-                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{item.text}</p>
-                  </li>
+        ) : skill.skillStack ? (
+          <div>
+            <h3 class="font-semibold my-2">{skill.name}</h3>
+            <div class="flex flex-wrap gap-2 mt-2 text-sm">
+              {skill.skillStack
+                .filter((item: { type: string }) => item.type === 'hard')
+                .map((item: { text: string, type: string }) => (
+                  <span class={`px-2 py-1 rounded border ${item.type === 'hard' ? 'border-blue-900 text-blue-900 dark:border-blue-400 dark:text-blue-400' : 'border-green-900 text-green-900 dark:border-green-400 dark:text-green-400'}`} key={item.text}>{item.text}</span>
                 ))}
-              </ol>
-            ) : skill.description ? (
-              typeof skill.description === 'string' ? (
-                <p>{skill.description}</p>
-              ) : (
-                <ul>
-                  {skill.description.elements.map((element: { text: string, strikethrough?: boolean }) => (
-                    <li style={{ display: 'list-item', listStyleType: 'disc', marginLeft: '0.625rem', textDecoration: element.strikethrough ? 'line-through' : 'none' }}>
-                      {element.text}
-                    </li>
-                  ))}
-                </ul>
-              )
-            ) : null}
+              {skill.skillStack
+                .filter((item: { type: string }) => item.type === 'soft')
+                .map((item: { text: string, type: string }) => (
+                  <span class={`px-2 py-1 rounded border ${item.type === 'hard' ? 'border-blue-900 text-blue-900 dark:border-blue-400 dark:text-blue-400' : 'border-green-900 text-green-900 dark:border-green-400 dark:text-green-400'}`} key={item.text}>{item.text}</span>
+                ))}
+            </div>
           </div>
-        </>
-      )}
-    </div>
-  ))}
+        ) : skill.motivation ? (
+          <div>
+            <h3 class="font-semibold my-2">Why I'm the Designer You Need</h3>
+            <ol class="list-decimal list-inside mt-2 text-sm">
+              {skill.motivation.map((item: { name: string, description: string }) => (
+                <li class="mb-2" key={item.name}>
+                  <span class="font-semibold">{item.name}</span><br />
+                  <span class="text-gray-600 dark:text-gray-400">{item.description}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ) : skill.name === 'Languages' ? (
+          <div class="p-5">
+            <h3 class="font-semibold my-2">{skill.name}</h3>
+            <div class="mt-2">
+              {skill.languages.map((item: { name: string, level: string }) => (
+                <div class="mb-4" key={item.name}>
+                  <div class="flex justify-between mb-1">
+                    <span class="font-semibold text-gray-600 dark:text-gray-400">{item.name}</span>
+                    <span class="text-sm text-gray-500 dark:text-gray-400">{item.level}</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="bg-blue-600 h-2.5 rounded-full" style={{ width: `${languageLevels[item.level]}%` }}></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : skill.certifications ? (
+          <div>
+            <h3 class="font-semibold my-2">{skill.name}</h3>
+            <ul class="mt-2 text-sm">
+              {skill.certifications.map((item: { name: string, institution: string, date: string }) => (
+                <li class="mb-2" key={item.name}>
+                  <span class="font-semibold">{item.name}</span><br />
+                  <span class="text-gray-600 dark:text-gray-400">{item.institution}</span><br />
+                  <span class="text-gray-600 dark:text-gray-400">{item.date}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+      </div>
+    ))}
+  </div>
 </div>
 
 <style>
-.grid {
+.grid-tech-stack {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
 
