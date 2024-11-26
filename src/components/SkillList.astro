@@ -1,0 +1,235 @@
+---
+import type { Skill } from "@src/pages/About/skills";
+
+const { skills } = Astro.props;
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+  {skills.map((skill: Skill) => (
+    <div class={`border dark:border-zinc-700 rounded-xl shadow-sm flex flex-col ${skill.image ? 'p-0' : 'p-5'}`}>
+      {skill.image ? (
+        <img src={skill.image.src} alt={skill.image.alt} class="w-full h-full object-cover" />
+      ) : skill.techStack ? (
+        <div>
+          <h3 class="font-semibold my-2">{skill.name}</h3>
+          <div class="flex flex-wrap gap-4">
+            {skill.techStack.map((item: { name: string, icon: JSX.Element }) => (
+              <div class="flex flex-col items-center">
+                <item.icon class="text-8xl" />
+                <span class="text-sm mt-2">{item.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : skill.skillStack ? (
+        <div>
+          <h3 class="font-semibold my-2">{skill.name}</h3>
+          <div class="flex flex-wrap gap-2 mt-2 text-sm">
+            {skill.skillStack.map((item: { text: string }) => (
+              <span class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">{item.text}</span>
+            ))}
+          </div>
+        </div>
+      ) : skill.certifications ? (
+        <div>
+          <h3 class="font-semibold my-2">{skill.name}</h3>
+          <ul class="mt-2 text-sm">
+            {skill.certifications.map((item: { name: string, institution: string, date: string }) => (
+              <li class="mb-2">
+                <span class="font-semibold">{item.name}</span><br />
+                <span class="text-gray-600 dark:text-gray-400">{item.institution}</span><br />
+                <span class="text-gray-600 dark:text-gray-400">{item.date}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : skill.strength ? (
+        <div>
+          <h3 class="font-semibold my-2">{skill.name}</h3>
+          <div class="flex flex-wrap gap-2 mt-2 text-sm">
+            {skill.strength.map((item: { text: string }) => (
+              <span class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">{item.text}</span>
+            ))}
+          </div>
+        </div>
+      ) : skill.motivation ? (
+        <div>
+          <h3 class="font-semibold my-2">{skill.name}</h3>
+          <ul class="mt-2 text-sm">
+            {skill.motivation.map((item: { text: string }) => (
+              <li class="mb-2" innerHTML={item.text}></li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <>
+          <div class="flex justify-between items-center">
+          </div>
+          <h3 class="font-semibold my-2">{skill.name}</h3>
+          <div class="text-zinc-600 dark:text-zinc-300 mb-4 flex-grow">
+            {skill.timeline ? (
+              <ol class="relative border-l border-gray-200 dark:border-gray-700 ml-6">
+                {skill.timeline.map((item: { date: string, text: string, svg: JSX.Element, color: string }) => (
+                  <li class="mb-10 ml-6">
+                    <span class={`absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-8 ring-white dark:ring-gray-900 ${item.color}`}>
+                      <item.svg />
+                    </span>
+                    <h4 class="flex items-center mb-1 font-semibold text-gray-900 dark:text-white">{item.date}</h4>
+                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{item.text}</p>
+                  </li>
+                ))}
+              </ol>
+            ) : skill.description ? (
+              typeof skill.description === 'string' ? (
+                <p>{skill.description}</p>
+              ) : (
+                <ul>
+                  {skill.description.elements.map((element: { text: string, strikethrough?: boolean }) => (
+                    <li style={{ display: 'list-item', listStyleType: 'disc', marginLeft: '0.625rem', textDecoration: element.strikethrough ? 'line-through' : 'none' }}>
+                      {element.text}
+                    </li>
+                  ))}
+                </ul>
+              )
+            ) : null}
+          </div>
+        </>
+      )}
+    </div>
+  ))}
+</div>
+
+<style>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.border {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto;
+}
+
+.relative {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.ml-6 {
+  margin-left: 1.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.min-h-[50px] {
+  min-height: 50px;
+}
+
+.text-zinc-600 {
+  color: #4b5563;
+}
+
+.dark\:text-zinc-300 {
+  color: #d1d5db;
+}
+
+.text-gray-900 {
+  color: #111827;
+}
+
+.dark\:text-white {
+  color: #ffffff;
+}
+
+.text-base {
+  font-size: 1rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.bg-gray-200 {
+  background-color: #e5e7eb;
+}
+
+.dark\:bg-gray-700 {
+  background-color: #374151;
+}
+
+.text-gray-800 {
+  color: #1f2937;
+}
+
+.dark\:text-gray-200 {
+  color: #e5e7eb;
+}
+
+.border-l {
+  border-left-width: 1px;
+}
+
+.border-gray-200 {
+  border-color: #e5e7eb;
+}
+
+.dark\:border-gray-700 {
+  border-color: #374151;
+}
+
+.ring-8 {
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 1);
+}
+
+.dark\:ring-gray-900 {
+  box-shadow: 0 0 0 8px rgba(17, 24, 39, 1);
+}
+
+.w-8 {
+  width: 2rem;
+}
+
+.h-8 {
+  height: 2rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.size-6 {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+</style>
