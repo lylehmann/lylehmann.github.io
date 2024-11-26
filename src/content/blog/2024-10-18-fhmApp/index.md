@@ -6,7 +6,7 @@ description: 'Here is a sample of some basic Markdown syntax that can be used wh
 startDate: '2024-07-29'
 pubDate: '2024-08-02'
 updatedDate: '2024-10-18'
-tags: ["WBS Coding School", "UX-Design", "UI-Design", "Digitalisation"]
+tags: ['WBS Coding School', 'UX-Design', 'UI-Design', 'Digitalisation']
 coverImage: './blog-placeholder-4.jpg'
 ---
 
@@ -38,27 +38,27 @@ Testing with users helped refine ideas based on feedback and usability testing r
 
 ### Internal conflicts
 
-During the development process, the team encountered internal conflicts: 
+During the development process, the team encountered internal conflicts:
 
 - **Conflicting Ideas:** Team members had differing opinions on how best to solve user problems, leading to debates over feature prioritization and design approaches.
 - **Decision to Split:** To address these conflicts, the team decided to split responsibilities for high-fidelity (HiFi) versions of the app. This approach allowed for future A/B testing with users to determine the most effective solutions.
 
 ### Individual Contributions
 
-#### High-Fidelity Prototyping 
+#### High-Fidelity Prototyping
 
 In my individual contribution, I focused on creating a unique HiFi version of the app:
 
 - Renaming the App: I proposed rebranding my version as the Fashion Heritage Museum app. This change aimed to enhance branding clarity and differentiation by aligning the app's identity more closely with its focus on fashion history.
 
-#### Unique Features Implemented: 
+#### Unique Features Implemented:
 
 - Developed a clearer and simpler user flow to improve navigation.
 - Designed a light and dark mode feature, making it easier for users to read the app in varying lighting conditions within museum exhibition environments.
 
 ## Solution
 
-The Fashion Design Museum App addresses visitor challenges by: 
+The Fashion Design Museum App addresses visitor challenges by:
 
 - **Seamless Transition:** Syncing touchscreens with the museum app via QR codes or NFC allows users to save and explore interacted content later.
 - **Personalized Content:** Visitors can select specific themes or eras of interest. The system tracks preferences to recommend relevant content.
@@ -67,7 +67,7 @@ The Fashion Design Museum App addresses visitor challenges by:
 ## Outcomes and Lessons Learned
 
 - Enhanced visitor engagement by providing a cohesive digital experience that extends beyond the museum visit.
-Improved navigation of complex exhibits through personalized recommendations.
+  Improved navigation of complex exhibits through personalized recommendations.
 - Recognized the importance of aligning digital solutions with user preferences for a more intuitive experience.
 
 ## Future Improvements

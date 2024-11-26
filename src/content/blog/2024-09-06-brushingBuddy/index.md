@@ -2,7 +2,7 @@
 title: 'BrushingBuddy: Simplifying Oral Care Routines'
 slug: 'using-mdx'
 description: 'BrushBuddy is a mobile app designed to support users in improving their oral hygiene routines.'
-tags: ["WBS Coding School", "UX-Design", "UI-Design", "Accessibility"]
+tags: ['WBS Coding School', 'UX-Design', 'UI-Design', 'Accessibility']
 startDate: '2024-08-26'
 pubDate: '2024-09-06'
 coverImage: './blog-placeholder-5.jpg'
@@ -43,5 +43,5 @@ Many individuals struggle with:
 ## Future Improvements
 
 - Simplify language for greater inclusivity
-- Expand survey to include open-ended questions and multiple languages. 
+- Expand survey to include open-ended questions and multiple languages.
 - Focus on workflows rather than specific health conditions

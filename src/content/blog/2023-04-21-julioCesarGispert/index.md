@@ -2,13 +2,13 @@
 title: 'Azulverdoso: Crafting a Digital Home for Artisanal Ceramics'
 slug: 'third-post'
 description: 'Creating a digital presence for Azulverdoso'
-tags: ["cimdata Bildungsakademie", "UI-Design", "eCommerce"]
+tags: ['cimdata Bildungsakademie', 'UI-Design', 'eCommerce']
 startDate: '2023-08-21'
 pubDate: '2023-09-04'
 coverImage: './blog-placeholder-3.jpg'
 ---
 
-Yola Santos, the creative force behind Azulverdoso, is a talented artist based in Mexico who specializes in decorative ceramic works and the restoration of objects. Her artistic vision combines traditional Mexican craftsmanship with contemporary design, resulting in pieces that are both functional and visually striking. 
+Yola Santos, the creative force behind Azulverdoso, is a talented artist based in Mexico who specializes in decorative ceramic works and the restoration of objects. Her artistic vision combines traditional Mexican craftsmanship with contemporary design, resulting in pieces that are both functional and visually striking.
 
 As part of the Cimdata further education program in UX and UI design, I contributed to creating a digital presence for Azulverdoso, Yola Santos' artisanal ceramics and restored objects brand.
 
@@ -46,5 +46,5 @@ Azulverdoso faced several challenges due to its limited online presence:
 - Learned the importance of balancing visual appeal with functional design in an art-focused website
 - Gained practical experience in using Adobe XD for end-to-end UX/UI design
 - Recognized the value of iterative design based on user and stakeholder feedback
-- Navigated intercultural challenges and time zone differences between Germany and Mexico. 
+- Navigated intercultural challenges and time zone differences between Germany and Mexico.
 - Collaborated with team members from Mexico and Brazil, enhancing cross-cultural design perspectives
