@@ -3,7 +3,8 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Lukas from '@src/assets/img/lylehmann.jpg';
 import Prose from '../components/Prose.astro';
-
+import SkillList from '../../components/SkillList.astro';
+import { skills } from './about';
 ---
 
 <BaseLayout
@@ -24,57 +25,10 @@ import Prose from '../components/Prose.astro';
           </div>
           <Image src={Lukas} alt="Lukas Lehmann" width={300}  class="rounded-3xl rotate-3 mx-4 md:mx-0"/>
         </div>
-      <>
-        <div class="bg-white">
-  <div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-1 lg:px-8">
-    <div>
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Mission</h2>
-      <p class="mt-4 text-gray-500">Creating accessible digital experiences for neurodivergent users.</p>
-
-      <dl class="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-        <div class="border-t border-gray-200 pt-4">
-          <dt class="font-medium text-gray-900">Role</dt>
-          <dd class="mt-2 text-sm text-gray-500">
-            <ul>
-              <li><del>Care Giver</del></li>
-              <li><del>Webmaster</del></li>
-              <li><del>Production Editor Journals and Books</del></li>
-              <li>Digital Product Designer</li>
-            </ul>
-
-          </dd>
-        </div>
-        <div class="border-t border-gray-200 pt-4">
-          <dt class="font-medium text-gray-900">Demographics</dt>
-           <dd class="mt-2 text-sm text-gray-500">
-           Locations
-            <ul>
-              <li><del>Jerusalem, Israel</del></li>
-              <li>Berlin, Germany</li>
-            </ul>
-
-            Languages
-
-             <ul>
-              <li>German (Native)</li>
-              <li>English (Fluent)</li>
-              <li>Hebrew (Professional)</li>
-            </ul>
-          </dd>
-        </div>
-        <div class="border-t border-gray-200 pt-4">
-          <dt class="font-medium text-gray-900">Education</dt>
-          <dd class="mt-2 text-sm text-gray-500">
-            <ul>
-             <li>Currently enhancing my Product UX Design skills at WBS CODING SCHOOL (July 2024 - November 2024)</li>
-             <li>Certified in UX/UI Design and Scrum Master (PSM I) from cimdata Bildungsakademie (July 2023 - March 2024)</li>
-             <li>BA in Jewish Studies, which taught me strong research skills and analytical thinking (HfJS Heidelberg, 2005 - 2011)</li>
-            </ul>
-          </dd>
-        </div>
-        <div class="border-t border-gray-200 pt-4">
-          <dt class="font-medium text-gray-900">Work Experience</dt>
-          <dd class="mt-2 text-sm text-gray-500">
+  <div>
+        <div class="border-t  pt-4">
+          <h3 class="font-semibold my-2">Work Experience</h3>
+          <dd class="mt-2 text-sm">
             <ul>
               <li>Transitioned from disability work, website management and publishing to UX/UI design</li>
               <li>Managed complex book projects at De Gruyter, developing strong project management skills</li>
@@ -83,9 +37,9 @@ import Prose from '../components/Prose.astro';
           </ul>
           </dd>
         </div>
-        <div class="border-t border-gray-200 pt-4">
-          <dt class="font-medium text-gray-900">Skill Stack</dt>
-          <dd class="mt-2 text-sm text-gray-500">
+        <div class="border-t  pt-4">
+          <h3 class="font-semibold my-2">Skill Stack</h3>
+          <dd class="mt-2 text-sm">
             <ul>
               <li>Accessible UX/UI Design: Inclusive design for all users and devices</li>
               <li>Responsive Web Design: Mobile-first, fluid layouts, and media queries</li>
@@ -94,9 +48,9 @@ import Prose from '../components/Prose.astro';
             </ul>
           </dd>
         </div>
-         <div class="border-t border-gray-200 pt-4">
-          <dt class="font-medium text-gray-900">Tech Stack</dt>
-          <dd class="mt-2 text-sm text-gray-500">
+         <div class="border-t  pt-4">
+          <h3 class="font-semibold my-2">Tech Stack</h3>
+          <dd class="mt-2 text-sm">
             <ul>
               <li>Design Tools: Figma, Sketch, and Adobe XD</li>
               <li>SEO: Structured data, meta tags, and sitemaps</li>
@@ -107,9 +61,9 @@ import Prose from '../components/Prose.astro';
             </ul>
           </dd>
         </div>
-         <div class="border-t border-gray-200 pt-4">
-          <dt class="font-medium text-gray-900">Certifications</dt>
-          <dd class="mt-2 text-sm text-gray-500">
+         <div class="border-t  pt-4">
+          <h3 class="font-semibold my-2">Certifications</h3>
+          <dd class="mt-2 text-sm">
             <ul>
               <li>Product UX Design: WBS Coding School (July 2024 - November 2024)</li>
               <li>UX/UI Design & Scrum Master (PSM I): cimdata Bildungsakademie (July 2023 - March 2024)</li>
@@ -117,9 +71,9 @@ import Prose from '../components/Prose.astro';
             </ul>
           </dd>
         </div>
-         <div class="border-t border-gray-200 pt-4">
-          <dt class="font-medium text-gray-900">Strength</dt>
-          <dd class="mt-2 text-sm text-gray-500">
+         <div class="border-t  pt-4">
+          <h3 class="font-semibold my-2">Strength</h3>
+          <dd class="mt-2 text-sm">
             <ul>
                 <li>Deep understanding of diverse user needs from my work in disability support</li>
                 <li>Wide range of skills from working in different industries, including project management, problem-solving, and clear communication</li>
@@ -128,9 +82,9 @@ import Prose from '../components/Prose.astro';
             </ul>
           </dd>
         </div>
-         <div class="border-t border-gray-200 pt-4">
-          <dt class="font-medium text-gray-900">Motivation</dt>
-          <dd class="mt-2 text-sm text-gray-500">
+         <div class="border-t  pt-4">
+          <h3 class="font-semibold my-2">Motivation</h3>
+          <dd class="mt-2 text-sm">
             <ul>
              <li>Deep understanding of diverse user needs from my work in disability support</li>
              <li>Wide range of skills from working in different industries, including project management, problem-solving, and clear communication</li>

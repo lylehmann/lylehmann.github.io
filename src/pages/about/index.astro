@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+import Lukas from '@src/assets/img/lylehmann.jpg';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Prose from '../components/Prose.astro';
+import { skills } from './skills';
+import SkillList from '../../components/SkillList.astro';
+
+---
+
+<BaseLayout
+	title="About Me"
+	description="More about me."
+>
+  <div class='container'>
+    <div class="mb-10">
+      <h1 class="text-3xl font-bold mb-2">Hi 👋, I am Lukas!</h1>
+        <p class="text-zinc-700 dark:text-zinc-300 text-lg">
+          I am a Digital Product Designer on a mission to make technology accessible for all. My journey from disability care to UX/UI design has given me a unique perspective on creating truly inclusive digital experiences.
+        </p>
+    </div>
+    <SkillList skills={skills}/>
+  </div>
+</BaseLayout>
