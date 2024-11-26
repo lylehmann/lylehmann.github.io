@@ -1,41 +1,23 @@
 import type { ListFormat } from "typescript";
-import { EducationSvg, WorkSvg } from '@src/components/svgs';
-import { FaJsSquare, FaReact, FaNodeJs, FaCss3Alt, FaHtml5, FaGitAlt, FaDocker, FaFigma, FaSketch, FaWordpress, FaGithub, FaTerminal } from 'react-icons/fa';
+import { WorkSvg } from '@src/components/svgs';
+import { FaJsSquare, FaNodeJs, FaCss3Alt, FaHtml5, FaGitAlt, FaFigma, FaSketch, FaWordpress, FaGithub, FaTerminal } from 'react-icons/fa';
 import { SiTypescript, SiObsidian, SiAstro, SiAdobexd } from 'react-icons/si';
 
 export const skills: Skill[] = [
   {
-    name: 'Profile Picture',
-    image: {
-      src: '/src/assets/img/lylehmann.jpg',
-      alt: 'Lukas Lehmann',
-      width: 300,
-      height: 100
-    }
+    name: 'Languages',
+    languages: [
+      { name: 'German', level: 'Native' },
+      { name: 'English', level: 'Fluent' },
+      { name: 'Hebrew', level: 'Intermediate' }
+    ]
   },
   {
-    name: 'Role',
-    description: {
-      kind: "list",
-      elements: [{ text: 'Digital Product Designer' }]
-    } as unknown as ListFormat,
-  },
-  {
-    name: 'Demographics',
-    description: {
-      kind: "list",
-      elements: [
-        { text: 'located in Berlin, Germany; previously in Heidelberg, Germany and Jerusalem, Israel' },
-        { text: 'speaks German, English, and Hebrew' },
-      ]
-    } as unknown as ListFormat,
-  },
-  {
-    name: 'Education',
+    name: 'Experience',
     timeline: [
-      { date: 'Jul 2024 - Nov 2024', text: 'Product UX Design at WBS CODING SCHOOL', svg: EducationSvg, color: 'bg-blue-100 dark:bg-blue-900' },
-      { date: 'Jul 2023 - Mar 2024', text: 'Certified in UX/UI Design and Scrum Master (PSM I) from cimdata', svg: EducationSvg, color: 'bg-blue-100 dark:bg-blue-900' },
-      { date: '2005 - 2011', text: 'BA in Jewish Studies, HfJS Heidelberg', svg: EducationSvg, color: 'bg-blue-100 dark:bg-blue-900' },
+      { date: 'Jul 2024 - Nov 2024', text: 'Product UX Design at WBS CODING SCHOOL', svg: WorkSvg, color: 'bg-blue-100 dark:bg-blue-900' },
+      { date: 'Jul 2023 - Mar 2024', text: 'Certified in UX/UI Design and Scrum Master (PSM I) from cimdata', svg: WorkSvg, color: 'bg-blue-100 dark:bg-blue-900' },
+      { date: '2005 - 2011', text: 'BA in Jewish Studies, HfJS Heidelberg', svg: WorkSvg, color: 'bg-blue-100 dark:bg-blue-900' },
       { date: 'Transitioned from disability work, website management and publishing to UX/UI design', text: 'Transitioned from disability work, website management and publishing to UX/UI design', svg: WorkSvg, color: 'bg-green-100 dark:bg-green-900' },
       { date: 'Managed complex book projects at De Gruyter', text: 'Managed complex book projects at De Gruyter, developing strong project management skills', svg: WorkSvg, color: 'bg-green-100 dark:bg-green-900' },
       { date: 'Created and maintained websites using HTML, CSS, and WordPress', text: 'Created and maintained websites using HTML, CSS, and WordPress', svg: WorkSvg, color: 'bg-green-100 dark:bg-green-900' },
@@ -45,40 +27,47 @@ export const skills: Skill[] = [
   {
     name: 'Tech Stack',
     techStack: [
-      { name: 'JavaScript', icon: FaJsSquare },
-      { name: 'TypeScript', icon: SiTypescript },
-      { name: 'React', icon: FaReact },
-      { name: 'Node.js', icon: FaNodeJs },
-      { name: 'CSS', icon: FaCss3Alt },
-      { name: 'HTML', icon: FaHtml5 },
-      { name: 'Git', icon: FaGitAlt },
-      { name: 'Docker', icon: FaDocker },
       { name: 'Figma', icon: FaFigma },
       { name: 'Sketch', icon: FaSketch },
       { name: 'Adobe XD', icon: SiAdobexd },
-      { name: 'WordPress', icon: FaWordpress },
-      { name: 'Obsidian', icon: SiObsidian },
+      { name: 'HTML', icon: FaHtml5 },
+      { name: 'CSS', icon: FaCss3Alt },
+      { name: 'JavaScript', icon: FaJsSquare },
+      { name: 'Node.js', icon: FaNodeJs },
       { name: 'Astro', icon: SiAstro },
+      { name: 'Git', icon: FaGitAlt },
       { name: 'GitHub', icon: FaGithub },
+      { name: 'WordPress', icon: FaWordpress },
       { name: 'Terminal', icon: FaTerminal }
     ]
   },
   {
     name: 'Skill Stack',
     skillStack: [
-      { text: 'Accessible UX/UI Design' },
-      { text: 'Inclusive Design' },
-      { text: 'Responsive Web Design' },
-      { text: 'Mobile-first' },
-      { text: 'Fluid Layouts' },
-      { text: 'Media Queries' },
-      { text: 'Design Systems' },
-      { text: 'Consistent Design Patterns' },
-      { text: 'Reusable Components' },
-      { text: 'Collaboration' },
-      { text: 'Design Sprint' },
-      { text: 'Design Thinking' },
-      { text: 'Remote Team Communication' }
+      { text: 'Accessible UX/UI Design', type: 'hard' },
+      { text: 'Inclusive Design', type: 'hard' },
+      { text: 'Responsive Web Design', type: 'hard' },
+      { text: 'Mobile-first', type: 'hard' },
+      { text: 'Fluid Layouts', type: 'hard' },
+      { text: 'Media Queries', type: 'hard' },
+      { text: 'Design Systems', type: 'hard' },
+      { text: 'Consistent Design Patterns', type: 'hard' },
+      { text: 'Reusable Components', type: 'hard' },
+      { text: 'Collaboration', type: 'soft' },
+      { text: 'Design Sprint', type: 'hard' },
+      { text: 'Design Thinking', type: 'hard' },
+      { text: 'Remote Team Communication', type: 'soft' },
+      { text: 'Diverse User Needs', type: 'soft' },
+      { text: 'Disability Support', type: 'soft' },
+      { text: 'Project Management', type: 'soft' },
+      { text: 'Problem-Solving', type: 'soft' },
+      { text: 'Clear Communication', type: 'soft' },
+      { text: 'Design Tools', type: 'hard' },
+      { text: 'Figma', type: 'hard' },
+      { text: 'Adobe XD', type: 'hard' },
+      { text: 'Sketch', type: 'hard' },
+      { text: 'Neurodivergent Perspective', type: 'soft' },
+      { text: 'Creative Solutions', type: 'soft' }
     ]
   },
   {
@@ -90,28 +79,13 @@ export const skills: Skill[] = [
     ]
   },
   {
-    name: 'Strength',
-    strength: [
-      { text: 'Diverse User Needs' },
-      { text: 'Disability Support' },
-      { text: 'Project Management' },
-      { text: 'Problem-Solving' },
-      { text: 'Clear Communication' },
-      { text: 'Design Tools' },
-      { text: 'Figma' },
-      { text: 'Adobe XD' },
-      { text: 'Sketch' },
-      { text: 'Neurodivergent Perspective' },
-      { text: 'Creative Solutions' }
-    ]
-  },
-  {
-    name: 'Motivation',
+    name: "Why I'm the Designer You Need",
     motivation: [
-      { text: '<strong>Deep understanding</strong> of diverse user needs from my work in <strong>disability support</strong>' },
-      { text: 'Wide range of skills from working in different industries, including <strong>project management</strong>, <strong>problem-solving</strong>, and <strong>clear communication</strong>' },
-      { text: 'Skilled in design tools: <strong>Figma</strong>, <strong>Adobe XD</strong>, <strong>Sketch</strong>' },
-      { text: 'Unique perspective as a <strong>neurodivergent designer</strong>, helping to create new and <strong>creative solutions</strong>' }
+      { name: 'Understanding User Needs', description: 'I bring a deep understanding of diverse user needs, honed through my experience in disability support. This allows me to design with empathy and inclusivity at the forefront.' },
+      { name: 'Versatile Skill Set', description: 'With a background spanning multiple industries, I excel in project management, problem-solving, and clear communication—skills that ensure seamless collaboration and impactful results.' },
+      { name: 'Proficiency in Design Tools', description: 'I’m highly skilled in industry-standard tools like Figma, Adobe XD, and Sketch, enabling me to craft intuitive and visually compelling designs.' },
+       { name: 'Code Awareness and Collaboration', description: 'While not a developer, I have a strong awareness of front-end technologies like HTML and CSS. This allows me to collaborate effectively with developers, design feasible solutions, and bridge the gap between design and implementation.' },
+      { name: 'A Neurodivergent Perspective', description: 'As a neurodivergent designer, I offer a unique lens that fosters innovative and creative solutions. My perspective helps me challenge conventions and design for diverse audiences.' }
     ]
   }
 ];
