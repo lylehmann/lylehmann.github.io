@@ -14,49 +14,57 @@ import {
 } from 'react-icons/fa';
 import { SiTypescript, SiObsidian, SiAstro, SiAdobexd } from 'react-icons/si';
 
-const skills = [
+export const skills: Skill[] = [
   {
-    name: 'Work Experience',
+    name: 'Languages',
+    languages: [
+      { name: 'German', level: 'Native' },
+      { name: 'English', level: 'Fluent' },
+      { name: 'Hebrew', level: 'Intermediate' },
+    ],
+  },
+  {
+    name: 'Experience',
     timeline: [
       {
+        date: 'Jul 2024 - Nov 2024',
+        text: 'Product UX Design at WBS CODING SCHOOL',
+        svg: WorkSvg,
+        color: 'bg-blue-100 dark:bg-blue-900',
+      },
+      {
         date: 'Jul 2023 - Mar 2024',
-        name: 'Certified in UX/UI Design and Scrum Master (PSM I)',
-        place: 'cimdata',
+        text: 'Certified in UX/UI Design and Scrum Master (PSM I) from cimdata',
         svg: WorkSvg,
         color: 'bg-blue-100 dark:bg-blue-900',
       },
       {
         date: '2005 - 2011',
-        name: 'BA in Jewish Studies',
-        place: 'HfJS Heidelberg',
+        text: 'BA in Jewish Studies, HfJS Heidelberg',
         svg: WorkSvg,
         color: 'bg-blue-100 dark:bg-blue-900',
       },
       {
         date: 'Transitioned from disability work, website management and publishing to UX/UI design',
-        name: 'Transitioned from disability work, website management and publishing to UX/UI design',
-        place: '',
+        text: 'Transitioned from disability work, website management and publishing to UX/UI design',
         svg: WorkSvg,
         color: 'bg-green-100 dark:bg-green-900',
       },
       {
         date: 'Managed complex book projects at De Gruyter',
-        name: 'Managed complex book projects',
-        place: 'De Gruyter',
+        text: 'Managed complex book projects at De Gruyter, developing strong project management skills',
         svg: WorkSvg,
         color: 'bg-green-100 dark:bg-green-900',
       },
       {
         date: 'Created and maintained websites using HTML, CSS, and WordPress',
-        name: 'Created and maintained websites',
-        place: 'using HTML, CSS, and WordPress',
+        text: 'Created and maintained websites using HTML, CSS, and WordPress',
         svg: WorkSvg,
         color: 'bg-green-100 dark:bg-green-900',
       },
       {
         date: 'Experience at Shekel and Saint Vincent',
-        name: 'Experience at Shekel and Saint Vincent',
-        place: 'working with people with special needs, deeply influences my approach to inclusive design and accessibility',
+        text: 'Experience at Shekel and Saint Vincent, working with people with special needs, deeply influences my approach to inclusive design and accessibility',
         svg: WorkSvg,
         color: 'bg-green-100 dark:bg-green-900',
       },
