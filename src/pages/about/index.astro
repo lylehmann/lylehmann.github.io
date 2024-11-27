@@ -7,22 +7,22 @@ import { skills } from './skills';
 import SkillList from '../../components/SkillList.astro';
 ---
 
-<BaseLayout
-    title="About Me"
-    description="More about me."
->
-    <div class='container'>
-        <div class='w-full md:flex md:items-center gap-16 mb-10'>
-            <div class="text-pretty leading-9">
-                <h1 class="text-4xl font-bold mb-4">Hi 👋, I am Lukas </h1>
-                <Prose>
-                    <div class="text-lg">
-                        <p>a Digital Product Designer on a mission to make technology accessible for all. My journey from disability care to UX/UI design has given me a unique perspective on creating truly inclusive digital experiences.</p>
-                    </div>
-                </Prose>
-            </div>
-            <Image src={Lukas} alt="Lukas Lehmann" width={300} loading="eager" class="rounded-3xl rotate-3 mx-4 md:mx-0"/>
-        </div>
-        <SkillList skills={skills} />
-    </div>
+<BaseLayout title='About Me' description='More about me.'>
+	<div class='container'>
+		<div class='w-full md:flex md:items-center gap-16 mb-10'>
+			<div class='text-pretty leading-9'>
+				<h1 class='text-4xl font-bold mb-4'>Hi 👋, I am Lukas</h1>
+				<Prose>
+					<div class='text-lg'>
+						<p>
+							a Digital Product Designer on a mission to make technology accessible for all. My journey from disability care to UX/UI design
+							has given me a unique perspective on creating truly inclusive digital experiences.
+						</p>
+					</div>
+				</Prose>
+			</div>
+			<Image src={Lukas} alt='Lukas Lehmann' width={300} loading='eager' class='rounded-3xl rotate-3 mx-4 md:mx-0' />
+		</div>
+		<SkillList skills={skills} />
+	</div>
 </BaseLayout>

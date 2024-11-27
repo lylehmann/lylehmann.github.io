@@ -2,7 +2,7 @@
 title: 'Lieferando App: Enhancing the Food Ordering Experience'
 slug: 'lorem-ipsum'
 description: 'Redesigning the Lieferando app, focusing on improving the user experience for German food enthusiasts'
-tags: ["WBS Coding School", "UX-Design", "UI-Design", "eCommerce"]
+tags: ['WBS Coding School', 'UX-Design', 'UI-Design', 'eCommerce']
 startDate: '2024-08-12'
 pubDate: '2024-08-23'
 coverImage: './blog-placeholder-3.jpg'

@@ -4,7 +4,7 @@ slug: 'first-post'
 description: 'FocusBuddy for macOS is designed to help individuals, especially those with ADHD or productivity challenges, stay on task and accountable during work sessions.'
 startDate: 'Oct 21 2024'
 pubDate: 'Nov 08 2024'
-tags: ["WBS Coding School", "UX-Design", "UI-Design", "Accessibility"]
+tags: ['WBS Coding School', 'UX-Design', 'UI-Design', 'Accessibility']
 coverImage: './blog-placeholder-1.jpg'
 ---
 
@@ -45,7 +45,7 @@ Many individuals struggle to stay focused when working or studying alone:
 ## Future Improvements
 
 - Expand customization options for timers and focus sessions.
-Broaden the library of focus sounds and music.
+  Broaden the library of focus sounds and music.
 - Enhance shared agenda features for better collaboration.
 - Improve mobile optimization for seamless cross-device use.
 - Integrate popular task management tools like Apple reminders, Trello or Asana.

@@ -2,7 +2,7 @@
 title: 'Das Metta: Enhancing the Online Experience for a Unique Munich Venue'
 slug: 'sagittis-purus'
 description: 'Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas'
-tags: ["WBS Coding School", "UX-Design", "UI-Design"]
+tags: ['WBS Coding School', 'UX-Design', 'UI-Design']
 startDate: '2024-08-05'
 pubDate: '2024-08-09'
 updatedDate: '2024-10-04'
@@ -62,7 +62,7 @@ Adapting the comprehensive website content and functionality to a smaller screen
 ## Outcomes and Lessons Learned
 
 - Created a user-friendly design for the website and mobile app, focusing on simplifying the user experience
-Improved visual hierarchy to guide users through content effectively
+  Improved visual hierarchy to guide users through content effectively
 - Learned the importance of clear dietary information presentation for Das Metta's target audience
 - Recognized the challenge of balancing comprehensive information with a clean, uncluttered design
 - Gained insights into designing for a diverse user base with varying needs and preferences
