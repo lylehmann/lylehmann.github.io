@@ -1,7 +1,6 @@
 ---
 import type { Skill } from '@src/pages/About/skills';
-
-const { skills } = Astro.props;
+import skills from '@src/pages/About/skills';
 
 const languageLevels = {
   Native: 100,
@@ -12,7 +11,7 @@ const languageLevels = {
 
 const email = import.meta.env.PUBLIC_EMAIL;
 const linkedin = import.meta.env.PUBLIC_LINKEDIN;
-const cvPath = import.meta.env.PUBLIC_CV_PATH;
+const github = import.meta.env.PUBLIC_GITHUB;
 ---
 
 <div class='flex flex-col lg:flex-row gap-5'>
@@ -24,14 +23,15 @@ const cvPath = import.meta.env.PUBLIC_CV_PATH;
           <div class={`border dark:border-zinc-700 rounded-xl shadow-sm flex flex-col ${skill.image ? 'p-0' : 'p-5'}`} key={skill.name}>
             <div class='pt-4 pb-4'>
               <ol class='relative border-l border-gray-200 dark:border-gray-700 ml-6'>
-                {skill.timeline.map((item: { date: string; text: string; svg: JSX.Element; color: string }) => (
+                {skill.timeline.map((item: { date: string; name: string; place: string; svg: JSX.Element; color: string }) => (
                   <li class='mb-10 ml-6' key={item.date}>
                     <span class={`absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ${item.color}`}>
                       <item.svg />
                     </span>
-                    <span class='font-semibold'>{item.date}</span>
+                    <span class='mb-1 text-xs text-gray-600 dark:text-neutral-400'>{item.date}</span>
                     <br />
-                    <p class='mb-4 text-sm text-gray-600 dark:text-gray-400'>{item.text}</p>
+                    <p class='font-semibold text-sm text-gray-800 dark:text-neutral-200'>{item.name}</p>
+                    <p class='mt-1 text-sm text-gray-600 dark:text-neutral-400'>{item.place}</p>
                   </li>
                 ))}
               </ol>
@@ -50,7 +50,7 @@ const cvPath = import.meta.env.PUBLIC_CV_PATH;
       <div class='flex flex-col gap-3'>
         <a href={`mailto:${email}`} class='bg-blue-500 text-white px-4 py-2 rounded-lg text-center hover:bg-blue-600'>Email</a>
         <a href={linkedin} target="_blank" rel="noopener noreferrer" class='bg-blue-700 text-white px-4 py-2 rounded-lg text-center hover:bg-blue-800'>LinkedIn</a>
-        <a href={cvPath} target="_blank" rel="noopener noreferrer" class='bg-gray-800 text-white px-4 py-2 rounded-lg text-center hover:bg-gray-900'>Download CV</a>
+        <a href={github} target="_blank' rel='noopener noreferrer' class='bg-gray-800 text-white px-4 py-2 rounded-lg text-center hover:bg-gray-900'>GitHub</a>
       </div>
     </div>
   </div>
@@ -272,5 +272,55 @@ const cvPath = import.meta.env.PUBLIC_CV_PATH;
 .size-6 {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.dark\:text-neutral-400 {
+  color: #9ca3af;
+}
+
+.text-gray-800 {
+  color: #1f2937;
+}
+
+.dark\:text-neutral-200 {
+  color: #e5e7eb;
+}
+
+.ms-6 {
+  margin-left: 1.5rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.space-y-1\.5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.375rem * var(--tw-space-y-reverse));
+}
+
+.ps-1 {
+  padding-left: 0.25rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
+.group-last\:pb-0:last-child {
+  padding-bottom: 0;
 }
 </style>
