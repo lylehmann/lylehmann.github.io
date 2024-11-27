@@ -2,7 +2,7 @@
 title: 'OBI Chatbot: Enhancing Customer Experience Through AI-driven Interaction'
 slug: 'second-post'
 description: 'OBI, a leading home improvement retailer, needed to improve customer support and engagement'
-tags: ["cimdata Bildungsakademie", "Branded Interactions"]
+tags: ['cimdata Bildungsakademie', 'Branded Interactions']
 startDate: '2024-02-29'
 pubDate: '2024-03-07'
 coverImage: './blog-placeholder-2.jpg'
