@@ -1,5 +1,5 @@
 import type { ListFormat } from "typescript";
-import { WorkSvg } from '@src/components/svgs';
+import { EducationSvg, WorkSvg } from '@src/components/svgs';
 import {
   FaJsSquare,
   FaNodeJs,
@@ -28,20 +28,26 @@ export const skills: Skill[] = [
     timeline: [
       {
         date: 'Jul 2024 - Nov 2024',
-        text: 'Product UX Design at WBS CODING SCHOOL',
-        svg: WorkSvg,
+        text: 'Product UX Design',
+        place: 'WBS Coding School',
+        location: 'Berlin, Germany',
+        svg: EducationSvg,
         color: 'bg-blue-100 dark:bg-blue-900',
       },
       {
         date: 'Jul 2023 - Mar 2024',
-        text: 'Certified in UX/UI Design and Scrum Master (PSM I) from cimdata',
-        svg: WorkSvg,
+        text: 'Certified in UX/UI Design and Scrum Master (PSM I)',
+        place: 'cimdata Bildungsakademie',
+        location: 'Berlin, Germany',
+        svg: EducationSvg,
         color: 'bg-blue-100 dark:bg-blue-900',
       },
       {
         date: '2005 - 2011',
-        text: 'BA in Jewish Studies, HfJS Heidelberg',
-        svg: WorkSvg,
+        text: 'BA in Jewish Studies and History',
+        place: 'HfJS Heidelberg, University of Heidelberg',
+        location: 'Heidelberg, Germany',
+        svg: EducationSvg,
         color: 'bg-blue-100 dark:bg-blue-900',
       },
       {
