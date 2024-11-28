@@ -1,0 +1,69 @@
+---
+export interface DescriptionItem {
+  title: string;
+  content: string | string[];
+}
+
+export interface Props {
+  items: DescriptionItem[];
+}
+
+const { items } = Astro.props;
+import { FigmaSvg, SlackSvg } from '@src/components/svgs.tsx';
+---
+
+<div class="bg-white/70 rounded-lg py-2 px-3">
+  <dl class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1 items-center">
+    {items.map((item) => (
+      <Fragment>
+        <dt class="font-semibold text-gray-600 text-sm">
+          {item.title}
+        </dt>
+        <dd class="text-sm">
+          {Array.isArray(item.content) ? (
+            <div class="flex flex-wrap gap-1.5 items-center">
+              {item.content.map((contentItem) => (
+                contentItem === 'Figma' ? (
+                  <div class="flex items-center gap-1">
+                    <FigmaSvg class="w-4 h-4" />
+                    <span class="text-xs text-gray-700">{contentItem}</span>
+                  </div>
+                ) : contentItem === 'Slack' ? (
+                  <div class="flex items-center gap-1">
+                    <SlackSvg class="w-4 h-4" />
+                    <span class="text-xs text-gray-700">{contentItem}</span>
+                  </div>
+                ) : (
+                  <span class="bg-gray-100 text-gray-700 rounded-full px-2 py-0.5 text-xs leading-tight">
+                    {contentItem}
+                  </span>
+                )
+              ))}
+            </div>
+          ) : (
+            <span class="text-gray-900">{item.content}</span>
+          )}
+        </dd>
+      </Fragment>
+    ))}
+  </dl>
+</div>
+
+<style>
+  .description-list dl {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .description-list dt {
+    font-weight: bold;
+    margin-right: 10px;
+    align-self: start; /* Ensures dt starts at the top */
+  }
+
+  .description-list dd {
+    margin: 0 0 10px 0;
+    align-self: start; /* Ensures dd starts at the top */
+  }
+</style>
