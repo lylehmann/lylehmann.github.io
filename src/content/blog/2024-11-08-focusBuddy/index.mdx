@@ -8,32 +8,34 @@ tags: ['WBS Coding School', 'UX-Design', 'UI-Design', 'Accessibility']
 ---
 
 import DescriptionList from '@src/components/widgets/DescriptionList.astro';
+import Stepper from '@src/components/widgets/Stepper.astro';
+import FeatureCard from '@src/components/widgets/FeatureCard.astro';
 import { FigmaSvg, SlackSvg } from '@src/components/svgs.tsx';
 
 > **FocusBuddy for macOS** is designed to help individuals, especially those with ADHD or productivity challenges, stay on task and accountable during work sessions. With a clean, intuitive interface, FocusBuddy provides a supportive space where users can find accountability partners or groups and use tools like the Pomodoro timer and focus-enhancing music to boost productivity.
 
 <DescriptionList
-	items={[
-		{ title: 'Role', content: 'Product designer' },
-		{ title: 'Team', content: 'Solo project' },
-		{
-			title: 'Design Expertise',
-			content: [
-				'UX/UI design',
-				'User research and testing',
-				'Business analysis',
-				'Design thinking',
-				'Information architecture',
-				'Interaction design',
-				'Wireframing',
-				'Prototyping',
-				'Design systems',
-				'Accessibility focus (ADHD)'
-			]
-		},
-		{ title: 'Soft Skills', content: ['Empathy', 'Communication', 'Adaptability'] },
-		{ title: 'Tools', content: ['Figma', 'Slack'] }
-	]}
+  items={[
+    { title: 'Role', content: 'Product designer' },
+    { title: 'Team', content: 'Solo project' },
+    {
+      title: 'Design Expertise',
+      content: [
+        'UX/UI design',
+        'User research and testing',
+        'Business analysis',
+        'Design thinking',
+        'Information architecture',
+        'Interaction design',
+        'Wireframing',
+        'Prototyping',
+        'Design systems',
+        'Accessibility focus (ADHD)'
+      ]
+    },
+    { title: 'Soft Skills', content: ['Empathy', 'Communication', 'Adaptability'] },
+    { title: 'Tools', content: ['Figma', 'Slack'] }
+  ]}
 />
 
 ## The Challenge
@@ -47,18 +49,32 @@ Many individuals struggle to stay focused when working or studying alone:
 
 ## Design Process
 
-1. **Research:** Surveyed and interviewed individuals with ADHD and productivity challenges.
-2. **Ideation:** Brainstormed features like accountability partners, timers, and music.
-3. **Prototyping & Testing:** Developed and tested low-, mid-, and high-fidelity wireframes.
-4. **Final Design:** Delivered a clean, flexible interface with Pomodoro timer and music integration.
+<Stepper
+	steps={[
+		{ title: 'Research', description: 'Surveyed and interviewed individuals with ADHD and productivity challenges.' },
+		{ title: 'Ideation', description: 'Brainstormed features like accountability partners, timers, and music.' },
+		{ title: 'Prototyping & Testing', description: 'Developed and tested low-, mid-, and high-fidelity wireframes.' },
+		{ title: 'Final Design', description: 'Delivered a clean, flexible interface with Pomodoro timer and music integration.' }
+	]}
+/>
 
 ## Key Features
 
-- **Chat Feature:** Enables real-time communication with accountability partners.
-- **Focus Sounds & Music:** Integrated to enhance concentration.
-- **Timer:** Pomodoro-style timer for structured work sessions.
-- **Shared Agenda:** Allows users to collaborate on tasks and schedules.
-- **Online Community:** A space to celebrate progress and stay motivated.
+<div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+	<FeatureCard
+		title='Chat Feature'
+		description='Enables real-time communication with accountability partners.'
+		image='/images/chat-feature.jpg'
+	/>
+	<FeatureCard title='Focus Sounds & Music' description='Integrated to enhance concentration.' image='/images/focus-sounds.jpg' />
+	<FeatureCard title='Timer' description='Pomodoro-style timer for structured work sessions.' image='/images/timer.jpg' />
+	<FeatureCard title='Shared Agenda' description='Allows users to collaborate on tasks and schedules.' image='/images/shared-agenda.jpg' />
+	<FeatureCard
+		title='Online Community'
+		description='A space to celebrate progress and stay motivated.'
+		image='/images/online-community.jpg'
+	/>
+</div>
 
 ## Outcomes and Lessons Learned
 
