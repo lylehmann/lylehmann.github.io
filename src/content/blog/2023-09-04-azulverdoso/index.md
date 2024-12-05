@@ -5,7 +5,6 @@ description: 'Crafting a Digital Presence for a Musician and Percussion Teacher'
 tags: ['Julio Cesar Gispert', 'Content Marketing', 'eCommerce']
 startDate: '2022-08-31'
 pubDate: '2023-04-21'
-coverImage: './blog-placeholder-3.jpg'
 ---
 
 Julio Cesar Gispert is a versatile musician and percussion teacher based in Vienna, Austria. With 20 years of experience and a background in music pedagogy and psychology, Julio specializes in Cuban percussion and rhythms. He offers lessons on various instruments, including drums, bongo, cajón, and batá, as well as piano for children. Julio's unique teaching approach emphasizes feeling the "groove" through dance and vocalization, providing students with a comprehensive musical experience.

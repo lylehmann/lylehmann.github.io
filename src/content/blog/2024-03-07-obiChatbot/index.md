@@ -5,7 +5,6 @@ description: 'OBI, a leading home improvement retailer, needed to improve custom
 tags: ['cimdata Bildungsakademie', 'Branded Interactions']
 startDate: '2024-02-29'
 pubDate: '2024-03-07'
-coverImage: './blog-placeholder-2.jpg'
 ---
 
 OBI, a leading home improvement retailer, needed to improve customer support and engagement, particularly for DIY enthusiasts from Gen-Z.
