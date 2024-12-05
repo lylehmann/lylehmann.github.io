@@ -7,12 +7,18 @@ pubDate: 'Nov 08 2024'
 tags: ['WBS Coding School', 'UX-Design', 'UI-Design', 'Accessibility']
 ---
 
+import HeroSection from '@src/components/widgets/HeroSection.astro';
 import DescriptionList from '@src/components/widgets/DescriptionList.astro';
 import Stepper from '@src/components/widgets/Stepper.astro';
 import FeatureCard from '@src/components/widgets/FeatureCard.astro';
 import { FigmaSvg, SlackSvg } from '@src/components/svgs.tsx';
 
-> **FocusBuddy for macOS** is designed to help individuals, especially those with ADHD or productivity challenges, stay on task and accountable during work sessions. With a clean, intuitive interface, FocusBuddy provides a supportive space where users can find accountability partners or groups and use tools like the Pomodoro timer and focus-enhancing music to boost productivity.
+
+<HeroSection
+  title="FocusBuddy: A Safe Space for Focus and Accountability"
+  description="FocusBuddy for macOS is designed to help individuals, especially those with ADHD or productivity challenges, stay on task and accountable during work sessions. With a clean, intuitive interface, FocusBuddy provides a supportive space where users can find accountability partners or groups and use tools like the Pomodoro timer and focus-enhancing music to boost productivity."
+  coverImage="./path-to-your-cover-image.jpg"
+/>
 
 <DescriptionList
   items={[
