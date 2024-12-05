@@ -5,7 +5,6 @@ description: 'Redesigning the Lieferando app, focusing on improving the user exp
 tags: ['WBS Coding School', 'UX-Design', 'UI-Design', 'eCommerce']
 startDate: '2024-08-12'
 pubDate: '2024-08-23'
-coverImage: './blog-placeholder-3.jpg'
 ---
 
 As part of the WBS Coding School bootcamp, I contributed to redesigning the Lieferando app, focusing on improving the user experience for German food enthusiasts
