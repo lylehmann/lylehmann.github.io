@@ -5,7 +5,6 @@ description: 'BrushBuddy is a mobile app designed to support users in improving 
 tags: ['WBS Coding School', 'UX-Design', 'UI-Design', 'Accessibility']
 startDate: '2024-08-26'
 pubDate: '2024-09-06'
-coverImage: './blog-placeholder-5.jpg'
 ---
 
 BrushBuddy is a mobile app designed to support users in improving their oral hygiene routines. This project allowed me to apply user-centered methodologies and accessibility principles to create an engaging, inclusive digital solution for a common daily challenge.
