@@ -7,7 +7,6 @@ startDate: '2024-07-29'
 pubDate: '2024-08-02'
 updatedDate: '2024-10-18'
 tags: ['WBS Coding School', 'UX-Design', 'UI-Design', 'Digitalisation']
-coverImage: './blog-placeholder-4.jpg'
 ---
 
 The Fashion Design Museum App is designed to enhance the museum visitor experience by integrating physical exhibits with digital content. The app aims to personalize and enrich the visitor journey through interactive and self-guided tours, tailored content, and a seamless transition from on-site screens to mobile devices.

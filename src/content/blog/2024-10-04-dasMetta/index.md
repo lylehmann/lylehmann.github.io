@@ -6,7 +6,6 @@ tags: ['WBS Coding School', 'UX-Design', 'UI-Design']
 startDate: '2024-08-05'
 pubDate: '2024-08-09'
 updatedDate: '2024-10-04'
-coverImage: './blog-placeholder-3.jpg'
 ---
 
 As part of the WBS Coding School bootcamp, I contributed to the UX design for Das Metta, a unique coffee shop, bakery, and yoga space in Munich, enhancing its online presence through a dedicated website and mobile app.

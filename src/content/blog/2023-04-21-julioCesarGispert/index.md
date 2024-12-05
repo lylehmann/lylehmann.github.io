@@ -5,7 +5,6 @@ description: 'Creating a digital presence for Azulverdoso'
 tags: ['cimdata Bildungsakademie', 'UI-Design', 'eCommerce']
 startDate: '2023-08-21'
 pubDate: '2023-09-04'
-coverImage: './blog-placeholder-3.jpg'
 ---
 
 Yola Santos, the creative force behind Azulverdoso, is a talented artist based in Mexico who specializes in decorative ceramic works and the restoration of objects. Her artistic vision combines traditional Mexican craftsmanship with contemporary design, resulting in pieces that are both functional and visually striking.
