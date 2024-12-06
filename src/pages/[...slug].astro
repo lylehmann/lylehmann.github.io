@@ -4,28 +4,30 @@ import Prose from '../components/Prose.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import FormattedDate from '../components/FormattedDate.astro';
-import AboutTheAuthor from '../components/widgets/AboutTheAuthor.astro';
+import AboutTheClient from '../components/widgets/AboutTheClient.astro';
+import { clientName, clientDescription, clientImage } from '@src/content/blog/2024-11-08-focusBuddy/index.mdx';
 import TableOfContent from '../components/widgets/TableOfContent.astro';
 import { slugify } from '../utils';
 import { loadEnv } from 'vite';
 
 const { GISCUS_REPO, GISCUS_REPO_ID, GISCUS_CATEGORY, GISCUS_CATEGORY_ID } = loadEnv(
-	process.env.NODE_ENV || 'production',
-	process.cwd(),
-	''
+    process.env.NODE_ENV || 'production',
+    process.cwd(),
+    ''
 );
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post: any) => ({
-		params: { slug: post.slug },
-		props: post
-	}));
+    const posts = await getCollection('blog');
+    return posts.map((post: any) => ({
+        params: { slug: post.slug },
+        props: post
+    }));
 }
+
 type Props = CollectionEntry<'blog'>;
 const post = Astro.props;
 const {
-	data: { title, seoTitle, description, coverImage, pubDate, updatedDate, tags }
+    data: { title, seoTitle, description, coverImage, pubDate, updatedDate, tags, clientName, clientDescription }
 } = post;
 const { Content, headings } = await post.render();
 ---
@@ -109,8 +111,12 @@ const { Content, headings } = await post.render();
 		</main>
 		<div class='shrink-0 w-[280px] hidden md:block'>
 			<div class='mb-4'>
-				<AboutTheAuthor />
-			</div>
+        <AboutTheClient
+          clientName={clientName}
+          clientDescription={clientDescription}
+          // clientImage={post.data.clientImage} // Auskommentiert, falls nicht benötigt
+        />
+      </div>
 			<TableOfContent headings={headings} />
 		</div>
 	</div>
