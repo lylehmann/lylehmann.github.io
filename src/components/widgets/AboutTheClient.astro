@@ -1,0 +1,34 @@
+---
+import { clientData } from '../../data/clientData.js';
+
+export interface Props {
+  clientName: string;
+  clientDescription: string;
+  clientImage?: string;
+}
+
+const props = {
+  clientName: clientData.clientName,
+  clientDescription: clientData.clientDescription,
+  clientImage: clientData.clientImage
+};
+---
+
+<div class='about-the-client py-4 border-b'>
+  <h3 class='font-extrabold uppercase mb-4 text-sm'>About the Client</h3>
+  {props.clientImage && (
+    <div class='flex items-center mb-4'>
+      <img src={props.clientImage} alt={props.clientName} class='w-16 h-16 rounded-full mr-4' />
+      <div>
+        <h3 class='text-xl font-semibold text-gray-900 dark:text-white'>{props.clientName}</h3>
+        <p>{props.clientDescription}</p>
+      </div>
+    </div>
+  )}
+  {!props.clientImage && (
+    <div>
+      <h3 class='text-xl font-semibold text-gray-900 dark:text-white'>{props.clientName}</h3>
+      <p>{props.clientDescription}</p>
+    </div>
+  )}
+</div>
