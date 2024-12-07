@@ -8,7 +8,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://lylehmann.com',
+	site: 'https://lylehmann.github.io',
 	integrations: [
 		mdx(),
 		sitemap(),
