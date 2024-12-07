@@ -1,31 +1,21 @@
 ---
-import { clientData } from '@src/data/clientData.js';
-
-export interface Props {
-  clientId: string;
-}
-
-const { clientId } = Astro.props;
-const client = clientData[clientId];
-const hasClientName = client && client.clientName;
-const hasClientDescription = client && client.clientDescription;
-const hasClientImage = client && client.clientImage;
-const showErrorMessage = !hasClientName && !hasClientDescription && !hasClientImage;
 ---
 
 <div class='about-the-client py-4 border-b'>
   <h3 class='font-extrabold uppercase mb-4 text-sm'>About the Client</h3>
-  {showErrorMessage ? (
-    <p>Client data not found.</p>
-  ) : (
+  {props.clientImage && (
     <div class='flex items-center mb-4'>
-      {hasClientImage && (
-        <img src={client.clientImage} alt={client.clientName} class='w-16 h-16 rounded-full mr-4' />
-      )}
+      <img src={props.clientImage} alt={props.clientName} class='w-16 h-16 rounded-full mr-4' />
       <div>
-        {hasClientName && <h3 class='text-xl font-semibold text-gray-900 dark:text-white'>{client.clientName}</h3>}
-        {hasClientDescription && <p>{client.clientDescription}</p>}
+        <h3 class='text-xl font-semibold text-gray-900 dark:text-white'>{props.clientName}</h3>
+        <p>{props.clientDescription}</p>
       </div>
+    </div>
+  )}
+  {!props.clientImage && (
+    <div>
+      <h3 class='text-xl font-semibold text-gray-900 dark:text-white'>{props.clientName}</h3>
+      <p>{props.clientDescription}</p>
     </div>
   )}
 </div>

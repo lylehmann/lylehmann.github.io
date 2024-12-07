@@ -4,36 +4,27 @@ import Prose from '../components/Prose.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import FormattedDate from '../components/FormattedDate.astro';
-<<<<<<< Updated upstream
-import AboutTheAuthor from '../components/widgets/AboutTheAuthor.astro';
-=======
-import AboutTheClient from '../components/widgets/AboutTheClient.astro';
->>>>>>> Stashed changes
 import TableOfContent from '../components/widgets/TableOfContent.astro';
 import { slugify } from '../utils';
 import { loadEnv } from 'vite';
 
 const { GISCUS_REPO, GISCUS_REPO_ID, GISCUS_CATEGORY, GISCUS_CATEGORY_ID } = loadEnv(
-	process.env.NODE_ENV || 'production',
-	process.cwd(),
-	''
+    process.env.NODE_ENV || 'production',
+    process.cwd(),
+    ''
 );
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post: any) => ({
-		params: { slug: post.slug },
-		props: post
-	}));
+    const posts = await getCollection('blog');
+    return posts.map((post: any) => ({
+        params: { slug: post.slug },
+        props: post
+    }));
 }
+
 type Props = CollectionEntry<'blog'>;
 const post = Astro.props;
 const {
-<<<<<<< Updated upstream
-	data: { title, seoTitle, description, coverImage, pubDate, updatedDate, tags }
-=======
-    data: { title, seoTitle, description, coverImage, pubDate, updatedDate, tags, clientName, clientDescription, clientImage }
->>>>>>> Stashed changes
 } = post;
 const { Content, headings } = await post.render();
 ---
@@ -116,19 +107,6 @@ const { Content, headings } = await post.render();
 			</article>
 		</main>
 		<div class='shrink-0 w-[280px] hidden md:block'>
-<<<<<<< Updated upstream
-			<div class='mb-4'>
-				<AboutTheAuthor />
-			</div>
-=======
-			 <div class='mb-4'>
-        <AboutTheClient
-          clientName={clientName}
-          clientDescription={clientDescription}
-          clientImage={clientImage}
-        />
-      </div>
->>>>>>> Stashed changes
 			<TableOfContent headings={headings} />
 		</div>
 	</div>
