@@ -10,7 +10,7 @@ export interface Props {
   results: string;
 }
 
-const { projectType, role, contribution, collaboration, methodologies, tools, preview, results } = Astro.props;
+const { projectType, role, contribution, collaboration, methodologies = [], tools = [], preview, results } = Astro.props;
 ---
 
 <div class="max-w-2xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">

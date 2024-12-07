@@ -5,98 +5,39 @@ description: 'FocusBuddy for macOS is designed to help individuals, especially t
 startDate: 'Oct 21 2024'
 pubDate: 'Nov 08 2024'
 tags: ['WBS Coding School', 'UX-Design', 'UI-Design', 'Accessibility']
----
-
-import HeroSection from '@src/components/widgets/HeroSection.astro';
-import DescriptionList from '@src/components/widgets/DescriptionList.astro';
-coverImage: './path-to-your-cover-image.jpg'
-clientName: "Focus Buddy"
-clientDescription: "Focus Buddy hilft Ihnen, Ihre Produktivität zu steigern."
-clientImage: "/images/focus-buddy.jpg"
+cid: "client1"
 ---
 
 import ProjectOverview from '@src/components/widgets/ProjectOverview.astro';
 import Stepper from '@src/components/widgets/Stepper.astro';
 import FeatureCard from '@src/components/widgets/FeatureCard.astro';
+import AboutTheClient from '@src/components/widgets/AboutTheClient.astro';
 import { FigmaSvg, SlackSvg } from '@src/components/svgs.tsx';
 
+export const { cid } = frontmatter;
+
 <ProjectOverview
-  projectType="Client Project"
-  role="Product Designer"
-  contribution="Checkout flow, search optimization, information architecture"
-  collaboration="Solo project with client collaboration"
-  methodologies={['Design Thinking', 'Agile', 'Lean UX']}
-  tools={['Figma', 'Slack']}
-  preview="./path-to-your-preview-image.jpg"
-  results="Successfully improved user engagement and conversion rates. Learned valuable skills in user research and prototyping."
-/>
-
-## The Challenge
-
-Many individuals struggle to stay focused when working or studying alone:
-
-- Difficulty maintaining focus on tasks.
-- Struggles with time management.
-- Need for structured routines.
-- Feelings of loneliness and isolation.
-
-## Design Process
-
-<Stepper
-  steps={[
-    { title: 'Research', description: 'Surveyed and interviewed individuals with ADHD and productivity challenges.' },
-    { title: 'Ideation', description: 'Brainstormed features like accountability partners, timers, and music.' },
-    { title: 'Prototyping & Testing', description: 'Developed and tested low-, mid-, and high-fidelity wireframes.' },
-    { title: 'Final Design', description: 'Delivered a clean, flexible interface with Pomodoro timer and music integration.' }
-  ]}
+	projectType='Client Project'
+	role='Product Designer'
 />
 
 ## Key Features
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-  <FeatureCard
-    title="Chat Feature"
-    description="Enables real-time communication with accountability partners."
-    image="/images/chat-feature.jpg"
-  />
-  <FeatureCard
-    title="Focus Sounds & Music"
-    description="Integrated to enhance concentration."
-    image="/images/focus-sounds.jpg"
-  />
-  <FeatureCard
-    title="Timer"
-    description="Pomodoro-style timer for structured work sessions."
-    image="/images/timer.jpg"
-  />
-  <FeatureCard
-    title="Shared Agenda"
-    description="Allows users to collaborate on tasks and schedules."
-    image="/images/shared-agenda.jpg"
-  />
-  <FeatureCard
-    title="Online Community"
-    description="A space to celebrate progress and stay motivated."
-    image="/images/online-community.jpg"
-  />
+<div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+	<FeatureCard
+		title='Chat Feature'
+		description='Enables real-time communication with accountability partners.'
+		image='/images/chat-feature.jpg'
+	/>
+	<FeatureCard title='Focus Sounds & Music' description='Integrated to enhance concentration.' image='/images/focus-sounds.jpg' />
+	<FeatureCard title='Timer' description='Pomodoro-style timer for structured work sessions.' image='/images/timer.jpg' />
 </div>
 
-## Outcomes and Lessons Learned
+<iframe
+	width='800'
+	height='450'
+	src='https://embed.figma.com/proto/d1syqeAQO8LLhMjd007u0U/Lukas-FB-Final-Figma?page-id=141%3A2494&node-id=2128-26868&node-type=canvas&viewport=3145%2C1069%2C0.25&scaling=contain&content-scaling=fixed&starting-point-node-id=2128%3A26868&show-proto-sidebar=1&embed-host=share'
+	allowfullscreen
+></iframe>
 
-- Created a user-friendly app that offers a safe space for focus and accountability.
-- Learned macOS-specific design elements, adapting to a new platform.
-- Discovered new Figma plugins that streamlined building a design system and implementing dark/light mode.
-- Recognized the importance of providing a safe environment for neurodivergent users.
-- Identified opportunities to further enhance customization for diverse user needs.
-
-
-## Future Improvements
-
-- Expand customization options for timers and focus sessions.
-  Broaden the library of focus sounds and music.
-- Enhance shared agenda features for better collaboration.
-- Improve mobile optimization for seamless cross-device use.
-- Integrate popular task management tools like Apple reminders, Trello or Asana.
-
-
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/d1syqeAQO8LLhMjd007u0U/Lukas-FB-Final-Figma?page-id=141%3A2494&node-id=2128-26868&node-type=canvas&viewport=3145%2C1069%2C0.25&scaling=contain&content-scaling=fixed&starting-point-node-id=2128%3A26868&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>
+<AboutTheClient cid={cid} />
