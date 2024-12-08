@@ -15,11 +15,8 @@ export default defineConfig({
 	adapter: netlify,
 
 	build: {
-		// Example: Generate `page.html` instead of `page/index.html` during build.
-		format: 'file',
-		client: './client',
-		assets: '_astro',
-		inlineStylesheets: `auto`
+		// Example: Enable server-rendering for all routes
+		// ssr: true
 	},
 
 	integrations: [
