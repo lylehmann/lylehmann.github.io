@@ -25,7 +25,7 @@ interface Language {
 
 interface Skill {
 	name: string;
-	languages?: { name: string; level: string }[];
+	languages?: { name: string; level: LanguageLevel }[];
 	timeline?: {
 		date: string;
 		text: string;
@@ -201,22 +201,3 @@ export const skills: Skill[] = [
 		]
 	}
 ];
-
-const SkillsComponent = () => (
-	<div>
-		{skills.map((skill) => (
-			<div key={skill.name}>
-				<h3>{skill.name}</h3>
-				<ul>
-					{skill.languages?.map((language) => (
-						<li key={language.name}>
-							{language.name} - {language.level}
-						</li>
-					))}
-				</ul>
-			</div>
-		))}
-	</div>
-);
-
-export default SkillsComponent;
