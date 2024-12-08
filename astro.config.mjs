@@ -10,6 +10,23 @@ import react from '@astrojs/react';
 export default defineConfig({
 	site: 'https://lylehmann.github.io',
 	base: '/lylehmann.github.io',
+	// Example: Require a trailing slash during development
+	trailingSlash: 'ignore',
+	redirects: {
+		'/blog/[...slug]': '/caseStudies/[...slug]'
+	},
+	output: 'static',
+	srcDir: './src',
+	publicDir: 'public',
+	outDir: 'dist',
+	cacheDir: './node_modules/.astro',
+	build: {
+		// Example: Generate `page.html` instead of `page/index.html` during build.
+		format: 'file',
+		client: './client',
+		assets: '_astro',
+		inlineStylesheets: `auto`
+	},
 	integrations: [
 		mdx(),
 		sitemap(),
