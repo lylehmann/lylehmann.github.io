@@ -6,20 +6,27 @@ import { autoNewTabExternalLinks } from './src/autoNewTabExternalLinks';
 import partytown from '@astrojs/partytown';
 import react from '@astrojs/react';
 
+import netlify from '@astrojs/netlify';
+
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://lylehmann.github.io',
 	base: '/lylehmann.github.io',
+
 	// Example: Require a trailing slash during development
 	trailingSlash: 'ignore',
+
 	redirects: {
 		'/blog/[...slug]': '/caseStudies/[...slug]'
 	},
-	output: 'static',
+
+	output: 'server',
+	adapter: netlify,
 	srcDir: './src',
 	publicDir: 'public',
 	outDir: 'dist',
 	cacheDir: './node_modules/.astro',
+
 	build: {
 		// Example: Generate `page.html` instead of `page/index.html` during build.
 		format: 'file',
@@ -27,6 +34,7 @@ export default defineConfig({
 		assets: '_astro',
 		inlineStylesheets: `auto`
 	},
+
 	integrations: [
 		mdx(),
 		sitemap(),
@@ -38,6 +46,7 @@ export default defineConfig({
 		}),
 		react()
 	],
+
 	markdown: {
 		extendDefaultPlugins: true,
 		rehypePlugins: [
@@ -48,5 +57,7 @@ export default defineConfig({
 				}
 			]
 		]
-	}
+	},
+
+	adapter: netlify()
 });
