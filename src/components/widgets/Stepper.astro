@@ -11,20 +11,15 @@ const { steps } = Astro.props;
 
 <ul class="flex flex-col items-start list-none">
   {steps.map((step, index) => (
-    <li class="relative mb-4 flex-1" key={index}>
+    <li class="relative mb-4 flex-1" {...{ key: index }}>
       <div class="flex items-center">
-        <div class="z-10 flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900 shrink-0">
-          <span class="text-blue-800 dark:text-blue-300 font-semibold">{index + 1}</span>
+        <div class="z-10 flex items-center justify-center w-8 h-8 bg-blue-100">
+          {/* Weitere Inhalte hier */}
         </div>
-        {index < steps.length - 1 && (
-          <div class="flex flex-col items-center">
-            <div class="w-0.5 h-full bg-gray-200 dark:bg-gray-700"></div>
-          </div>
-        )}
-        <div class="ml-4">
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{step.title}</h3>
-          <p class="text-base font-normal text-gray-500 dark:text-gray-400">{step.description}</p>
-        </div>
+      </div>
+      <div class="ml-4">
+        <h3 class="text-lg font-semibold">{step.title}</h3>
+        <p class="text-sm text-gray-600">{step.description}</p>
       </div>
     </li>
   ))}

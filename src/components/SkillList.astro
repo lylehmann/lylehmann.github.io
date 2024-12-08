@@ -1,13 +1,27 @@
 ---
-import type { Skill } from '@src/pages/About/skills';
+import React from "react";
+
+
+type LanguageLevel = 'Native' | 'Fluent' | 'Intermediate' | 'Basic';
+
+type Skill = {
+  name: string;
+  timeline: any;
+  certifications?: { name: string; institution: string; date: string }[];
+  techStack?: { name: string; icon: JSX.Element }[];
+  skillStack?: { text: string; type: string }[];
+  motivation?: { name: string; description: string }[];
+  languages?: { name: string; level: LanguageLevel }[];
+  image?: string;
+};
 
 const { skills } = Astro.props;
 
-const languageLevels = {
+const languageLevels: { [key in LanguageLevel]: number } = {
   Native: 100,
-  Fluent: 80,
-  Intermediate: 60,
-  Basic: 40
+  Fluent: 75,
+  Intermediate: 50,
+  Basic: 25,
 };
 
 const email = import.meta.env.PUBLIC_EMAIL;
@@ -17,17 +31,16 @@ const cvPath = import.meta.env.PUBLIC_CV_PATH;
 
 <div class='flex flex-col lg:flex-row gap-5'>
   <div class='flex flex-col gap-5 lg:w-80 order-1 lg:order-2'>
-    {
-      skills
-        .filter((skill) => skill.timeline)
+    { skills
+        .filter((skill: Skill) => skill.timeline)
         .map((skill: Skill) => (
-          <div class={`border dark:border-zinc-700 rounded-xl shadow-sm flex flex-col ${skill.image ? 'p-0' : 'p-5'}`} key={skill.name}>
+          <div class={`border dark:border-zinc-700 rounded-xl shadow-sm flex flex-col ${skill.image ? 'p-0' : 'p-5'}`}>
             <div class='pt-4 pb-4'>
               <ol class='relative border-l border-gray-200 dark:border-gray-700 ml-6'>
-                {skill.timeline.map((item: { date: string; text: string; place: string; location: string; svg: JSX.Element; color: string }) => (
-                  <li class='mb-10 ml-6' key={item.date}>
+                {skill.timeline && skill.timeline.map((item: { date: string; text: string; place: string; location: string; svg: JSX.Element; color: string }) => (
+                  <li class='mb-10 ml-6'>
                     <span class={`absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ${item.color}`}>
-                      <item.svg />
+                      {item.svg}
                     </span>
                     <span class='text-sm text-gray-600 dark:text-gray-400'>{item.date}</span>
                     <br />
@@ -41,6 +54,7 @@ const cvPath = import.meta.env.PUBLIC_CV_PATH;
           </div>
         ))
     }
+  </div>
     <div class='border dark:border-zinc-700 rounded-xl shadow-sm p-5'>
       <h3 class='font-semibold my-2'>Case Studies</h3>
       <div class='flex flex-col gap-3'>
@@ -59,15 +73,15 @@ const cvPath = import.meta.env.PUBLIC_CV_PATH;
   <div class='flex-1 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 order-2 lg:order-1'>
     {
       skills
-        .filter((skill) => !skill.timeline)
+        .filter((skill: { timeline: any; }) => !skill.timeline)
         .map((skill: Skill) => (
-          <div class={`border dark:border-zinc-700 rounded-xl shadow-sm flex flex-col ${skill.image ? 'p-0' : 'p-5'} ${skill.name === "Why I'm the Designer You Need" ? 'lg:col-span-2' : ''}`} key={skill.name}>
+          <div class={`border dark:border-zinc-700 rounded-xl shadow-sm flex flex-col ${skill.image ? 'p-0' : 'p-5'} ${skill.name === "Why I'm the Designer You Need" ? 'lg:col-span-2' : ''}`}>
             {skill.certifications ? (
               <div>
                 <h3 class='font-semibold my-2'>{skill.name}</h3>
                 <ul class='mt-2 text-sm'>
                   {skill.certifications.map((item: { name: string; institution: string; date: string }) => (
-                    <li class='mb-2' key={item.name}>
+                    <li class='mb-2'>
                       <span class='font-semibold'>{item.name}</span>
                       <br />
                       <span class='text-gray-600 dark:text-gray-400'>{item.institution}</span>
@@ -82,8 +96,8 @@ const cvPath = import.meta.env.PUBLIC_CV_PATH;
                 <h3 class='font-semibold my-2'>{skill.name}</h3>
                 <div class='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4'>
                   {skill.techStack.map((item: { name: string; icon: JSX.Element }) => (
-                    <div class='flex flex-col items-center' key={item.name}>
-                      <item.icon class='text-6xl' />
+                    <div class='flex flex-col items-center'>
+                      {item.icon && React.createElement(item.icon.type, { className: 'text-6xl' })}
                       <span class='text-sm mt-2'>{item.name}</span>
                     </div>
                   ))}
@@ -96,12 +110,12 @@ const cvPath = import.meta.env.PUBLIC_CV_PATH;
                   {skill.skillStack
                     .filter((item: { type: string }) => item.type === 'hard')
                     .map((item: { text: string; type: string }) => (
-                      <span class={`px-2 py-1 rounded border ${item.type === 'hard' ? 'border-blue-900 text-blue-900 dark:border-blue-400 dark:text-blue-400' : 'border-green-900 text-green-900 dark:border-green-400 dark:text-green-400'}`} key={item.text}>{item.text}</span>
+                      <span class={`px-2 py-1 rounded border ${item.type === 'hard' ? 'border-blue-900 text-blue-900 dark:border-blue-400 dark:text-blue-400' : 'border-green-900 text-green-900 dark:border-green-400 dark:text-green-400'}`}>{item.text}</span>
                     ))}
                   {skill.skillStack
                     .filter((item: { type: string }) => item.type === 'soft')
                     .map((item: { text: string; type: string }) => (
-                      <span class={`px-2 py-1 rounded border ${item.type === 'hard' ? 'border-blue-900 text-blue-900 dark:border-blue-400 dark:text-blue-400' : 'border-green-900 text-green-900 dark:border-green-400 dark:text-green-400'}`} key={item.text}>{item.text}</span>
+                      <span class={`px-2 py-1 rounded border ${item.type === 'hard' ? 'border-blue-900 text-blue-900 dark:border-blue-400 dark:text-blue-400' : 'border-green-900 text-green-900 dark:border-green-400 dark:text-green-400'}`}>{item.text}</span>
                     ))}
                 </div>
               </div>
@@ -110,7 +124,7 @@ const cvPath = import.meta.env.PUBLIC_CV_PATH;
                 <h3 class='font-semibold my-2'>Why I'm the Designer You Need</h3>
                 <ol class='list-decimal list-inside mt-2 text-sm'>
                   {skill.motivation.map((item: { name: string; description: string }) => (
-                    <li class='mb-2' key={item.name}>
+                    <li class='mb-2'>
                       <span class='font-semibold'>{item.name}</span>
                       <br />
                       <span class='text-gray-600 dark:text-gray-400'>{item.description}</span>
@@ -122,8 +136,8 @@ const cvPath = import.meta.env.PUBLIC_CV_PATH;
               <div class='p-5'>
                 <h3 class='font-semibold my-2'>{skill.name}</h3>
                 <div class='mt-2'>
-                  {skill.languages.map((item: { name: string; level: string }) => (
-                    <div class='mb-4' key={item.name}>
+                  {skill.languages && skill.languages.map((item: { name: string; level: LanguageLevel }) => (
+                    <div class='mb-4'>
                       <div class='flex justify-between mb-1'>
                         <span class='font-semibold text-gray-600 dark:text-gray-400'>{item.name}</span>
                         <span class='text-sm text-gray-500 dark:text-gray-400'>{item.level}</span>
