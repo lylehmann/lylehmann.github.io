@@ -5,16 +5,8 @@ interface Props {
   cid: string;
 }
 
-interface ClientInfo {
-  clientName: string;
-  clientDescription: string;
-  clientImage: string;
-}
-
-
 const { cid } = Astro.props as Props;
 const clientInfo = clientData[cid] || {};
-
 const { clientName, clientDescription, clientImage } = clientInfo;
 ---
 
