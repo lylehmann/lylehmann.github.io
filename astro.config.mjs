@@ -10,22 +10,9 @@ import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://lylehmann.github.io',
-	base: '/lylehmann.github.io',
-
-	// Example: Require a trailing slash during development
-	trailingSlash: 'ignore',
-
-	redirects: {
-		'/blog/[...slug]': '/caseStudies/[...slug]'
-	},
-
+	// Example: Set the default page layout to a custom component
 	output: 'server',
 	adapter: netlify,
-	srcDir: './src',
-	publicDir: 'public',
-	outDir: 'dist',
-	cacheDir: './node_modules/.astro',
 
 	build: {
 		// Example: Generate `page.html` instead of `page/index.html` during build.
