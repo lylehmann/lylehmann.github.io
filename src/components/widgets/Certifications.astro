@@ -1,0 +1,21 @@
+---
+import { certifications } from '@src/data/certifications.ts';
+---
+
+<div class="p-5">
+  <ul class='mt-2 text-sm'>
+    {certifications.map((item) => (
+      <li class='mb-2'>
+        <span class='font-semibold'>{item.name}</span>
+        <br />
+        <span class='text-gray-600'>{item.institution} ({item.date})</span>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .certifications {
+    margin: 1rem;
+  }
+</style>

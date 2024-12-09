@@ -3,8 +3,8 @@ import { Image } from 'astro:assets';
 import Lukas from '@src/assets/img/lylehmann.jpg';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Prose from '../../components/Prose.astro';
-import { skills } from './skills';
-import SkillList from '../../components/SkillList.astro';
+import { skills } from '@src/data/skills';
+import About from '@src/components/About.astro';
 ---
 
 <BaseLayout title='About Me' description='More about me.'>
@@ -23,6 +23,6 @@ import SkillList from '../../components/SkillList.astro';
 			</div>
 			<Image src={Lukas} alt='Lukas Lehmann' width={300} loading='eager' class='rounded-3xl rotate-3 mx-4 md:mx-0' />
 		</div>
-		<SkillList skills={skills} />
+    <About />
 	</div>
 </BaseLayout>
