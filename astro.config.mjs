@@ -6,13 +6,10 @@ import { autoNewTabExternalLinks } from './src/autoNewTabExternalLinks';
 import partytown from '@astrojs/partytown';
 import react from '@astrojs/react';
 
-import netlify from '@astrojs/netlify';
-
 // https://astro.build/config
 export default defineConfig({
 	// Example: Set the default page layout to a custom component
-	output: 'server',
-	adapter: netlify,
+	// layout: 'src/layouts/Default.astro',
 
 	build: {
 		// Example: Enable server-rendering for all routes
@@ -41,7 +38,5 @@ export default defineConfig({
 				}
 			]
 		]
-	},
-
-	adapter: netlify()
+	}
 });
