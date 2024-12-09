@@ -9,18 +9,10 @@ const linkedin = import.meta.env.PUBLIC_LINKEDIN;
 const github = import.meta.env.PUBLIC_GITHUB;
 
 const menu = [
-  {
-    link: '/about/',
-    label: 'About'
-  },
-  {
-    link: '/posts/',
-    label: 'Case Studies'
-  },
-  {
-    link: '/tags/',
-    label: 'Tags'
-  }
+  { label: 'About', link: '/about' },
+  { label: 'Case Studies', link: '/posts', class: 'case-studies' },
+  { label: 'Tags', link: '/tags' },
+  // Weitere Menüpunkte
 ];
 ---
 
@@ -78,7 +70,7 @@ const menu = [
 				{
 					menu.map((item) => (
 						<div class='px-2.5 text-sm'>
-							<HeaderLink class='py-3 flex items-center' href={item.link}>
+							<HeaderLink class={`py-3 flex items-center ${item.class || ''}`} href={item.link}>
 								{item.label}
 							</HeaderLink>
 						</div>
@@ -97,6 +89,9 @@ const menu = [
     }
     .dark #themeToggle .moon {
       display: block;
+    }
+    .case-studies {
+      white-space: nowrap;
     }
   </style>
 
