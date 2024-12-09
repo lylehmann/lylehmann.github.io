@@ -19,13 +19,13 @@ export const projects: Project[] = [
 		tags: ['HTML', 'CSS', 'GitHub']
 	},
 	{
-		name: 'Leo Baeck Institute Jerusalem (2014–2015)',
+		name: 'Leo Baeck Institute Jerusalem (2014-2015)',
 		description: 'Website redesign and CMS migration to WordPress.',
 		demoLink: 'https://leobaeck.org',
 		tags: ['Website', 'Redesign', 'WordPress']
 	},
 	{
-		name: 'Hochschule für Jüdische Studien Heidelberg (2006–2008)',
+		name: 'Hochschule f&uuml;r J&uuml;dische Studien Heidelberg (2006-2008)',
 		description: 'Webmaster role: managing and maintaining the institutions website.',
 		demoLink: 'https://www.hfjs.eu/',
 		demoLinkRel: 'nofollow noopener noreferrer',
