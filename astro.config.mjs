@@ -10,6 +10,8 @@ import react from '@astrojs/react';
 export default defineConfig({
 	// Example: Set the default page layout to a custom component
 	// layout: 'src/layouts/Default.astro',
+	site: 'https://lylehmann.github.io',
+	base: '/',
 
 	build: {
 		// Example: Enable server-rendering for all routes
