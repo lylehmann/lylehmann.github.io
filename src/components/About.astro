@@ -1,0 +1,70 @@
+---
+import Languages from './widgets/Languages.astro';
+import Certifications from './widgets/Certifications.astro';
+import TechStack from './widgets/TechStack.astro';
+import SkillStack from './widgets/SkillStack.astro';
+import CVTimeline from './widgets/cvTimeline.astro';
+import Motivations from './widgets/Motivations.astro';
+import { experience } from '@src/data/experience.tsx';
+import { education } from '@src/data/education.tsx';
+---
+
+<div class="about-page flex flex-wrap gap-4 mt-6">
+  <div class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
+    <h2 class="mb-4">Experience</h2>
+    <CVTimeline timeline={experience} />
+  </div>
+  <div class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
+    <h2 class="mb-4">Education</h2>
+    <CVTimeline timeline={education} />
+  </div>
+  <div class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
+    <h2 class="mb-4">Languages</h2>
+    <Languages />
+  </div>
+  <div class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
+    <h2 class="mb-4">Certifications</h2>
+    <Certifications />
+  </div>
+  <div class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
+    <h2 class="mb-4">Tech Stack</h2>
+    <TechStack />
+  </div>
+  <div class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
+    <h2 class="mb-4">Skill Stack</h2>
+    <SkillStack />
+  </div>
+    <div class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
+    <h2 class="mb-4">Why I'm the Designer You Need</h2>
+    <Motivations />
+  </div>
+</div>
+
+<style>
+  .about-page {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .container {
+    flex: 1 1 calc(50% - 1rem); /* Zwei Container pro Zeile */
+    box-sizing: border-box;
+    padding: 1rem;
+    border-radius: rounded-xl;
+    box-shadow: shadow-sm;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container h2 {
+    margin-bottom: 1rem; /* Abstand zwischen Überschrift und Inhalt */
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex: 1 1 100%; /* Ein Container pro Zeile auf kleineren Bildschirmen */
+    }
+  }
+</style>
