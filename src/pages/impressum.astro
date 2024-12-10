@@ -1,8 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const address = import.meta.env.PUBLIC_ADDRESS;
+const phoneNumber = import.meta.env.PUBLIC_PHONE_NUMBER;
+const email = import.meta.env.PUBLIC_EMAIL;
 ---
 
-<BaseLayout title='About Me' description='Lorem ipsum dolor sit amet'>
+<BaseLayout title='Impressum' description='Lorem ipsum dolor sit amet'>
 	<div class='container'>
 		<main class='prose text-lg dark:prose-invert'>
 			<article>
@@ -11,12 +15,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						<h1 class='text-4xl font-bold mb-4'>Impressum</h1>
 						<p>
 							Lukas Yair Lehmann<br />
-							{import.meta.env.PUBLIC_ADDRESS}
+							 {address}
 						</p>
 						<h2>Contact</h2>
 						<p>
-							Phone: {import.meta.env.PUBLIC_PHONE_NUMBER}<br />
-							E-Mail: {import.meta.env.PUBLIC_EMAIL}
+							Phone: {phoneNumber}<br />
+							E-Mail: {email}
 						</p>
 						<p>Source: <a href='https://www.e-recht24.de'>https://www.e-recht24.de</a></p>
 					</div>
