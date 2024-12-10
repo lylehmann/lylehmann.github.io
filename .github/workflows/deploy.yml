@@ -20,10 +20,15 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Set package manager
-        run: echo "PACKAGE_MANAGER=npm" >> $GITHUB_ENV
       - name: Install, build, and upload your site
         uses: withastro/action@v3
+        env:
+          PUBLIC_ADDRESS: ${{ secrets.PUBLIC_ADDRESS }}
+          PUBLIC_PHONE_NUMBER: ${{ secrets.PUBLIC_PHONE_NUMBER }}
+          PUBLIC_EMAIL: ${{ secrets.PUBLIC_EMAIL }}
+        with:
+          node-version: 22.12.0
+          package-manager: npm@latest
         # with:
         # path: . # The root location of your Astro project inside the repository. (optional)
         # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
@@ -39,3 +44,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
