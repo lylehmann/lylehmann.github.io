@@ -1,14 +1,8 @@
 // src/data/experience.tsx
 import * as React from 'react';
+import type { TimelineItem } from './types';
 
-export type TimelineItem = {
-	date: string;
-	text: string;
-	place: string;
-	location: string;
-	svg: (props: React.SVGProps<SVGSVGElement>) => React.ReactElement;
-	color: string;
-};
+export type { TimelineItem };
 
 export const experience: TimelineItem[] = [
 	{
@@ -16,7 +10,7 @@ export const experience: TimelineItem[] = [
 		text: 'Product UX Design',
 		place: 'WBS Coding School',
 		location: 'Berlin, Germany',
-		svg: (props) => <svg {...props} />, // Beispiel-SVG
+		svg: <svg />, // Beispiel-SVG
 		color: 'bg-blue-500'
 	},
 	{
@@ -24,7 +18,7 @@ export const experience: TimelineItem[] = [
 		text: 'UX/UI Design',
 		place: 'cimdata Bildungsakademie',
 		location: 'Berlin, Germany',
-		svg: (props) => <svg {...props} />, // Beispiel-SVG
+		svg: <svg />, // Beispiel-SVG
 		color: 'bg-green-500'
 	},
 	{
@@ -32,7 +26,7 @@ export const experience: TimelineItem[] = [
 		text: 'Content Marketing Manager',
 		place: 'WBS Training AG',
 		location: 'Berlin, Germany',
-		svg: (props) => <svg {...props} />, // Beispiel-SVG
+		svg: <svg />, // Beispiel-SVG
 		color: 'bg-red-500'
 	}
 	// Weitere Einträge

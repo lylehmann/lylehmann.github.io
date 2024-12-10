@@ -1,4 +1,4 @@
-// Pfad: src/data/types.ts
+// Pfad: src/data/types.tsx
 export type Skill = {
 	name: string;
 	timeline: any;
@@ -8,3 +8,12 @@ export type Skill = {
 	motivation?: { name: string; description: string }[];
 	image?: string;
 };
+
+export interface TimelineItem {
+	date: string;
+	text: string;
+	place: string;
+	location: string;
+	svg?: JSX.Element;
+	color?: string;
+}
