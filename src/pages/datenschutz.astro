@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const address = import.meta.env.PUBLIC_ADDRESS || 'Address not set';
+const phoneNumber = import.meta.env.PUBLIC_PHONE_NUMBER || 'Phone number not set';
+const email = import.meta.env.PUBLIC_EMAIL || 'Email not set';
 ---
 
 <BaseLayout title='About Me' description='Lorem ipsum dolor sit amet'>
@@ -107,10 +111,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						Lukas Lehmann<br />
 						{import.meta.env.PUBLIC_ADDRESS}
 					</p>
-					<>
+					<div>
 						Telefon: {import.meta.env.PUBLIC_PHONE_NUMBER}<br />
 						E-Mail: {import.meta.env.PUBLIC_EMAIL}
-					</>
+					</div>
 					<p>
 						Verantwortliche Stelle ist die nat&uuml;rliche oder juristische Person, die allein oder gemeinsam mit anderen &uuml;ber die
 						Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.&nbsp;B. Namen, E-Mail-Adressen o. &Auml;.) entscheidet.
