@@ -1,31 +1,31 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const address = import.meta.env.PUBLIC_ADDRESS;
-const phoneNumber = import.meta.env.PUBLIC_PHONE_NUMBER;
-const email = import.meta.env.PUBLIC_EMAIL;
+const address = import.meta.env.PUBLIC_ADDRESS || 'Address not set';
+const phoneNumber = import.meta.env.PUBLIC_PHONE_NUMBER || 'Phone number not set';
+const email = import.meta.env.PUBLIC_EMAIL || 'Email not set';
 ---
 
 <BaseLayout title='Impressum' description='Lorem ipsum dolor sit amet'>
-	<div class='container'>
-		<main class='prose text-lg dark:prose-invert'>
-			<article>
-				<div class='w-full md:flex md:items-center gap-16 mb-10'>
-					<div class='text-pretty leading-9'>
-						<h1 class='text-4xl font-bold mb-4'>Impressum</h1>
-						<p>
-							Lukas Yair Lehmann<br />
-							 {address}
-						</p>
-						<h2>Contact</h2>
-						<p>
-							Phone: {phoneNumber}<br />
-							E-Mail: {email}
-						</p>
-						<p>Source: <a href='https://www.e-recht24.de'>https://www.e-recht24.de</a></p>
-					</div>
-				</div>
-			</article>
-		</main>
-	</div>
+    <div class='container'>
+        <main class='prose text-lg dark:prose-invert'>
+            <article>
+                <div class='w-full md:flex md:items-center gap-16 mb-10'>
+                    <div class='text-pretty leading-9'>
+                        <h1 class='text-4xl font-bold mb-4'>Impressum</h1>
+                        <p>
+                            Lukas Yair Lehmann<br />
+                            {address}
+                        </p>
+                        <h2>Contact</h2>
+                        <p>
+                            Phone: {phoneNumber}<br />
+                            E-Mail: {email}
+                        </p>
+                        <p>Source: <a href='https://www.e-recht24.de'>https://www.e-recht24.de</a></p>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
 </BaseLayout>
