@@ -11,7 +11,8 @@
 		"trunk": "trunk",
 		"lint": "trunk check",
 		"fmt": "trunk fmt",
-		"build:css": "tailwindcss -i ./src/styles/global.css -o ./dist/styles.css"
+		"build:css": "tailwindcss -i ./src/styles/global.css -o ./dist/styles.css",
+		"test": "vitest"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.4",

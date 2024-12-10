@@ -6,6 +6,8 @@ export default defineConfig({
 		coverage: {
 			provider: 'istanbul',
 			reporter: ['text', 'json', 'html']
-		}
+		},
+		include: ['src/**/*.test.ts'], // Passen Sie den Pfad an Ihre Testdateien an
+		exclude: ['node_modules', 'dist'] // Schließen Sie unnötige Verzeichnisse aus
 	}
 });
