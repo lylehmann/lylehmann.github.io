@@ -1,14 +1,8 @@
 // src/data/education.tsx
 import * as React from 'react';
+import type { TimelineItem } from './types';
 
-export type TimelineItem = {
-	date: string;
-	text: string;
-	place: string;
-	location: string;
-	svg: (props: React.SVGProps<SVGSVGElement>) => React.ReactElement;
-	color: string;
-};
+export type { TimelineItem };
 
 export const education: TimelineItem[] = [
 	{
@@ -16,7 +10,7 @@ export const education: TimelineItem[] = [
 		text: 'Bachelor of Science in Computer Science',
 		place: 'Technical University of Berlin',
 		location: 'Berlin, Germany',
-		svg: (props) => <svg {...props} />, // Beispiel-SVG
+		svg: <svg />, // Beispiel-SVG
 		color: 'bg-blue-500'
 	},
 	{
@@ -24,7 +18,7 @@ export const education: TimelineItem[] = [
 		text: 'Associate Degree in Information Technology',
 		place: 'Community College of Berlin',
 		location: 'Berlin, Germany',
-		svg: (props) => <svg {...props} />, // Beispiel-SVG
+		svg: <svg />, // Beispiel-SVG
 		color: 'bg-green-500'
 	}
 	// Weitere Einträge
