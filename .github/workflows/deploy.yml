@@ -26,6 +26,8 @@ jobs:
           PUBLIC_ADDRESS: ${{ secrets.PUBLIC_ADDRESS }}
           PUBLIC_PHONE_NUMBER: ${{ secrets.PUBLIC_PHONE_NUMBER }}
           PUBLIC_EMAIL: ${{ secrets.PUBLIC_EMAIL }}
+          PUBLIC_LINKEDIN_URL: ${{ secrets.PUBLIC_LINKEDIN_URL }}
+          PUBLIC_GITHUB_URL: ${{ secrets.PUBLIC_GITHUB_URL }}
         with:
           node-version: 22.12.0
           package-manager: npm@latest
