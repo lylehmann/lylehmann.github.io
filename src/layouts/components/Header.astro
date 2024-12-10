@@ -4,9 +4,9 @@ import { Image } from 'astro:assets';
 import Logo from '@src/assets/img/small-lylehmann.jpg';
 import { SunIcon, MoonIcon, EmailIcon, GithubIcon, LinkedInIcon } from '@src/assets/svgs';
 
-const email = import.meta.env.PUBLIC_EMAIL;
-const linkedin = import.meta.env.PUBLIC_LINKEDIN;
-const github = import.meta.env.PUBLIC_GITHUB;
+const email = import.meta.env.PUBLIC_EMAIL || 'Email not set';
+const linkedin = import.meta.env.PUBLIC_LINKEDIN_URL || '#';
+const github = import.meta.env.PUBLIC_GITHUB_URL || '#';
 
 const menu = [
   { label: 'About', link: '/about' },
