@@ -116,18 +116,16 @@ export const techStack: StackItem[] = [
 	}
 ];
 export const skillStack: StackItem[] = [
-	{ text: 'Accessible UX/UI Design', type: 'Design', icon: FigmaSvg },
+	{ text: 'UX Design', type: 'Design', icon: FigmaSvg },
 	{ text: 'Inclusive Design', type: 'Design', icon: SketchSvg },
-	{ text: 'Responsive Web Design', type: 'Design', icon: AdobeXdSvg },
-	{ text: 'Mobile-first', type: 'Development', icon: HtmlSvg },
-	{ text: 'Fluid Layouts', type: 'Development', icon: CssSvg },
-	{ text: 'Media Queries', type: 'Development', icon: JavascriptSvg },
+	{ text: 'Responsive Design', type: 'Design', icon: AdobeXdSvg },
 	{ text: 'Design Systems', type: 'Design', icon: NodeJsSvg },
-	{ text: 'Consistent Design Patterns', type: 'Design', icon: AstroSvg },
-	{ text: 'Reusable Components', type: 'Development', icon: GitSvg },
-	{ text: 'Collaboration', type: 'Development', icon: GitHubSvg },
-	{ text: 'Design Sprint', type: 'Design', icon: WordPressSvg },
-	{ text: 'Design Thinking', type: 'Design', icon: TerminalSvg }
+	{ text: 'Design Thinking', type: 'Design', icon: TerminalSvg },
+	{ text: 'Empathy', type: 'Soft Skill', icon: SketchSvg },
+	{ text: 'Communication', type: 'Soft Skill', icon: AdobeXdSvg },
+	{ text: 'Curiosity', type: 'Soft Skill', icon: FigmaSvg },
+	{ text: 'Flexibility', type: 'Soft Skill', icon: HtmlSvg },
+	{ text: 'Goal-oriented', type: 'Soft Skill', icon: CssSvg }
 ];
 
 export const skills: Skill[] = [

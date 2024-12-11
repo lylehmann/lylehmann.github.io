@@ -9,6 +9,8 @@ import Prose from '../components/Prose.astro';
 import { projects } from './projects/projects';
 import ProjectList from '../components/ProjectList.astro';
 import PostItem from '../components/PostItem.astro';
+import WhatIDo from '@src/components/widgets/WhatIDo.astro';
+import RecentCaseStudies from '@src/components/widgets/RecentCaseStudies.astro';
 
 type BlogPost = CollectionEntry<'blog'>;
 
@@ -51,6 +53,18 @@ const posts = (await getCollection('blog'))
 			</div>
 			<ProjectList projects={top6Projects} />
 		</div>
+
+		<!-- What I Do Section -->
+		<section id="what-i-do" class="my-8">
+			<h2 class="text-2xl font-bold mb-4">What I Do</h2>
+			<WhatIDo />
+		</section>
+
+		<!-- Recent Case Studies Section -->
+		<section id="recent-case-studies" class="my-8">
+			<h2 class="text-2xl font-bold mb-4">Recent Case Studies</h2>
+			<RecentCaseStudies />
+		</section>
 	</main>
 </div>
 </BaseLayout>

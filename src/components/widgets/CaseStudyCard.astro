@@ -1,0 +1,38 @@
+---
+// CaseStudyCard.astro
+import FormattedDate from 'src/components/FormattedDate.astro';
+import type { CollectionEntry } from 'astro:content';
+
+type BlogPost = CollectionEntry<'blog'>;
+const { post }: Record<string, any> | { post: BlogPost } = Astro.props;
+---
+
+{post && post.data ? (
+  <div class='case-study-card flex flex-col sm:flex-row gap-2 sm:items-center border-b py-2 mb-1 capitalize dark:border-b-zinc-700'>
+    <div class='text-zinc-700 text-sm w-24 dark:text-zinc-300 shrink-0'>
+      <FormattedDate date={post.data.pubDate} />
+    </div>
+    <h3 class='font-medium grow'>
+      <a href={`/${post.slug}/`}>
+        {post.data.title}
+      </a>
+    </h3>
+  </div>
+) : null}
+
+<style>
+.case-study-card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-study-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+</style>

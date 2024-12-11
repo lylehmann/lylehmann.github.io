@@ -38,6 +38,8 @@ import { education } from '@src/data/education.tsx';
     <h2 class="mb-4">Why I'm the Designer You Need</h2>
     <Motivations />
   </div>
+  <div class="container">
+  </div>
 </div>
 
 <style>
@@ -49,11 +51,10 @@ import { education } from '@src/data/education.tsx';
   }
 
   .container {
-    flex: 1 1 calc(50% - 1rem); /* Zwei Container pro Zeile */
     box-sizing: border-box;
     padding: 1rem;
-    border-radius: rounded-xl;
-    box-shadow: shadow-sm;
+    border-radius: 1rem; /* Beispielwert, passe nach Bedarf an */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Beispielwert, passe nach Bedarf an */
     display: flex;
     flex-direction: column;
   }

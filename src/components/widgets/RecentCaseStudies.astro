@@ -1,0 +1,104 @@
+---
+import { getCollection } from 'astro:content';
+const blogPosts = await getCollection('blog');
+import CaseStudyCard from './CaseStudyCard.astro';
+
+const caseStudies = await getCollection('blog');
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+  {blogPosts.map((post) => (
+    <div class="card" data-key={post.id}>
+      {post.data.image && <img src={post.data.image.src} alt={post.data.title} class="card-image" />}
+      <div class="card-content">
+        <h3 class="card-title">{post.data.title}</h3>
+        <p class="card-description">{post.data.description}</p>
+        <p class="card-info">
+          {new Date(post.data.pubDate).toLocaleDateString()} - {post.data.clientName}
+        </p>
+        {post.data.tags && (
+          <div class="card-tags">
+            {post.data.tags.map((tag) => (
+              <span class="tag" data-key={tag}>{tag}</span>
+            ))}
+          </div>
+        )}
+        <a href={post.slug} class="card-link">Read More</a>
+      </div>
+    </div>
+  ))}
+</div>
+
+<div class="all-case-studies-link">
+  <a href="/posts/" class="all-case-studies-button">View All Case Studies</a>
+</div>
+
+<style>
+  .card {
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s ease;
+  }
+  .card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  .card-image {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  .card-content {
+    margin-top: 1rem;
+  }
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  .card-description {
+    margin-top: 0.5rem;
+    color: #666;
+  }
+  .card-info {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #999;
+  }
+  .card-tags {
+    margin-top: 1rem;
+  }
+  .tag {
+    display: inline-block;
+    background-color: #0070f3;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    font-size: 0.75rem;
+  }
+  .card-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #0070f3;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .card-link:hover {
+    text-decoration: underline;
+  }
+  .all-case-studies-link {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .all-case-studies-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #0070f3;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .all-case-studies-button:hover {
+    background-color: #005bb5;
+  }
+</style>
