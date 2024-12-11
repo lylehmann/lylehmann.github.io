@@ -1,0 +1,73 @@
+---
+interface Tab {
+  id: string;
+  label: string;
+  content: any;
+}
+
+interface Props {
+  tabs: Tab[];
+}
+
+const { tabs } = Astro.props;
+---
+
+<div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+  <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+    {tabs.map((tab, index) => (
+      <li class="me-2" role="presentation">
+        <button
+          class={`inline-block p-4 border-b-2 rounded-t-lg ${index === 0 ? 'border-blue-500 text-blue-600' : 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'}`}
+          id={`${tab.id}-tab`}
+          data-tabs-target={`#${tab.id}`}
+          type="button"
+          role="tab"
+          aria-controls={tab.id}
+          aria-selected={index === 0 ? 'true' : 'false'}
+        >
+          {tab.label}
+        </button>
+      </li>
+    ))}
+  </ul>
+</div>
+<div id="default-tab-content">
+  {tabs.map((tab, index) => (
+    <div
+      class={`p-4 rounded-lg bg-gray-50 dark:bg-gray-800 ${index !== 0 ? 'hidden' : ''}`}
+      id={tab.id}
+      role="tabpanel"
+      aria-labelledby={`${tab.id}-tab`}
+    >
+      {tab.content}
+    </div>
+  ))}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('[data-tabs-target]');
+    const tabContents = document.querySelectorAll('[role="tabpanel"]');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        if (tab instanceof HTMLElement) {
+          const target = document.querySelector(tab.dataset.tabsTarget as string);
+
+        tabContents.forEach(tc => {
+          tc.classList.add('hidden');
+        });
+
+        tabs.forEach(t => {
+          t.classList.remove('border-blue-500', 'text-blue-600');
+        });
+
+        if (target) {
+          target.classList.remove('hidden');
+        }
+        tab.classList.add('border-blue-500', 'text-blue-600');
+        }
+      });
+    });
+  });
+</script>

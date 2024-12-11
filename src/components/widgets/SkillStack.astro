@@ -3,11 +3,10 @@ import { skillStack } from '@src/data/skills.ts';
 ---
 
 <div class="skill-stack p-5">
-  <div class='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4'>
+  <div class='flex flex-wrap gap-4'>
     {skillStack.map((item) => (
-      <div class='flex flex-col items-center'>
-        {item.icon && <item.icon className="text-6xl" />}
-        <span class='text-sm mt-2'>{item.text}</span>
+      <div class='inline-flex items-center bg-gray-200 dark:bg-gray-700 rounded-full px-4 py-2'>
+        <span class='text-sm'>{item.text}</span>
       </div>
     ))}
   </div>
@@ -16,32 +15,5 @@ import { skillStack } from '@src/data/skills.ts';
 <style>
   .skill-stack {
     margin-bottom: 1rem;
-  }
-  .skill-stack .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  @media (min-width: 640px) {
-    .skill-stack .grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  @media (min-width: 768px) {
-    .skill-stack .grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-  .skill-stack .flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .skill-stack .text-6xl {
-    font-size: 3rem;
-  }
-  .skill-stack .text-sm {
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
   }
 </style>

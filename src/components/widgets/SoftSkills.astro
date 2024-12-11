@@ -1,0 +1,12 @@
+---
+import { softSkills } from '@src/data/softSkills.tsx';
+---
+
+<div class='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4'>
+  {softSkills.map((item) => (
+    <div class='flex flex-col items-center'>
+      {item.icon && <div class="icon">{item.icon}</div>}
+      <span class='text'>{item.text}</span>
+    </div>
+  ))}
+</div>

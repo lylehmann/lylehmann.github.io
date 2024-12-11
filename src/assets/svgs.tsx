@@ -82,8 +82,8 @@ export const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 // App Icons 16x16
 
-export const SlackSvg = ({ className }: { className?: string }) => (
-	<svg className={className} xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'>
+export const SlackSvg = () => (
+	<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'>
 		<path
 			fill='currentColor'
 			d='M6 15a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2h2zm1 0a2 2 0 0 1 2-2a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2a2 2 0 0 1-2-2zm2-8a2 2 0 0 1-2-2a2 2 0 0 1 2-2a2 2 0 0 1 2 2v2zm0 1a2 2 0 0 1 2 2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2a2 2 0 0 1 2-2zm8 2a2 2 0 0 1 2-2a2 2 0 0 1 2 2a2 2 0 0 1-2 2h-2zm-1 0a2 2 0 0 1-2 2a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2a2 2 0 0 1 2 2zm-2 8a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2v-2zm0-1a2 2 0 0 1-2-2a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2a2 2 0 0 1-2 2z'
@@ -135,8 +135,8 @@ export const WordPressSvg = () => (
 	</svg>
 );
 
-export const FigmaSvg = ({ className }: { className?: string }) => (
-	<svg className={className} xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'>
+export const FigmaSvg = () => (
+	<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'>
 		<path
 			fill='currentColor'
 			fill-rule='evenodd'
