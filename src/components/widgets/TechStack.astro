@@ -1,14 +1,15 @@
 ---
 
-import { techStack } from '@src/data/skills.ts';
+import { techStack } from '@src/data/techStack.tsx';
+import React from 'react';
 ---
 
 <div class="tech-stack p-5">
-  <div class='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4'>
+  <div class='flex flex-wrap gap-4'>
     {techStack.map((item) => (
-      <div class='flex flex-col items-center'>
-        {item.icon && <item.icon className="text-6xl" />}
-        <span class='text-sm mt-2'>{item.text}</span>
+      <div class='inline-flex items-center bg-gray-200 dark:bg-gray-700 rounded-full px-4 py-2'>
+        {item.icon && React.isValidElement(item.icon) && <item.icon.type class="w-6 h-6 mr-2" />}
+        <span class='text-sm'>{item.text}</span>
       </div>
     ))}
   </div>
@@ -17,32 +18,5 @@ import { techStack } from '@src/data/skills.ts';
 <style>
   .tech-stack {
     margin-bottom: 1rem;
-  }
-  .tech-stack .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  @media (min-width: 640px) {
-    .tech-stack .grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  @media (min-width: 768px) {
-    .tech-stack .grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-  .tech-stack .flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .tech-stack .text-6xl {
-    font-size: 3rem;
-  }
-  .tech-stack .text-sm {
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
   }
 </style>

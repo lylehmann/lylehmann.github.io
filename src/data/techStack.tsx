@@ -10,9 +10,7 @@ import {
 	GitSvg,
 	GitHubSvg,
 	WordPressSvg,
-	TerminalSvg,
-	EducationSvg,
-	WorkSvg
+	TerminalSvg
 } from '@src/assets/svgs';
 
 interface Skill {
@@ -32,7 +30,5 @@ export const techStack: Skill[] = [
 	{ icon: <GitSvg />, text: 'Git' },
 	{ icon: <GitHubSvg />, text: 'GitHub' },
 	{ icon: <WordPressSvg />, text: 'WordPress' },
-	{ icon: <TerminalSvg />, text: 'Terminal' },
-	{ icon: <EducationSvg />, text: 'Education' },
-	{ icon: <WorkSvg />, text: 'Work' }
+	{ icon: <TerminalSvg />, text: 'Terminal' }
 ];
