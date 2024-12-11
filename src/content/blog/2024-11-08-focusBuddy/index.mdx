@@ -8,17 +8,17 @@ clientName: 'FocusBuddy Inc.'
 isFavorite: true
 ---
 
-import ProjectOverview from '@src/components/widgets/ProjectOverview.astro';
-import Stepper from '@src/components/widgets/Stepper.astro';
-import FeatureCard from '@src/components/widgets/FeatureCard.astro';
-import AboutTheClient from '@src/components/widgets/AboutTheClient.astro';
-import { FigmaSvg, SlackSvg } from '@src/assets/svgs.tsx';
+import ProjectOverview from '/src/components/widgets/ProjectOverview.astro';
+import Stepper from '/src/components/widgets/Stepper.astro';
+import FeatureCard from '/src/components/widgets/FeatureCard.astro';
+import AboutTheClient from '/src/components/widgets/AboutTheClient.astro';
+import { FigmaSvg, SlackSvg } from '/src/assets/svgs.tsx';
 
 <ProjectOverview projectType='Client Project' role='Product Designer' />
 
 ## Key Features
 
-<div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
 	<FeatureCard
 		title='Chat Feature'
 		description='Enables real-time communication with accountability partners.'
@@ -32,10 +32,8 @@ import { FigmaSvg, SlackSvg } from '@src/assets/svgs.tsx';
 	width='800'
 	height='450'
 	src='https://embed.figma.com/proto/d1syqeAQO8LLhMjd007u0U/Lukas-FB-Final-Figma?page-id=141%3A2494&node-id=2128-26868&node-type=canvas&viewport=3145%2C1069%2C0.25&scaling=contain&content-scaling=fixed&starting-point-node-id=2128%3A26868&show-proto-sidebar=1&embed-host=share'
-	allowfullscreen
+	allowFullScreen
 ></iframe>
-
-<AboutTheClient cid={cid} />
 
 ## FocusBuddy
 
