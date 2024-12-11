@@ -7,37 +7,58 @@ import CVTimeline from './widgets/cvTimeline.astro';
 import Motivations from './widgets/Motivations.astro';
 import { experience } from '@src/data/experience.tsx';
 import { education } from '@src/data/education.tsx';
+import CallToAction from './widgets/CallToAction.astro';
 ---
 
 <div class="about-page flex flex-wrap gap-4 mt-6">
-  <div class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
+  <!-- Experience Section -->
+  <section class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
     <h2 class="mb-4">Experience</h2>
     <CVTimeline timeline={experience} />
-  </div>
-  <div class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
+  </section>
+
+  <!-- Education Section -->
+  <section class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
     <h2 class="mb-4">Education</h2>
     <CVTimeline timeline={education} />
-  </div>
-  <div class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
+  </section>
+
+  <!-- Languages Section -->
+  <section class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
     <h2 class="mb-4">Languages</h2>
     <Languages />
-  </div>
-  <div class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
     <h2 class="mb-4">Certifications</h2>
     <Certifications />
-  </div>
-  <div class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
     <h2 class="mb-4">Tech Stack</h2>
     <TechStack />
-  </div>
-  <div class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
+  </section>
+
+  <!-- Skill Stack Section -->
+  <section class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
     <h2 class="mb-4">Skill Stack</h2>
     <SkillStack />
-  </div>
-    <div class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
+  </section>
+
+  <!-- Motivations Section -->
+  <section class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
     <h2 class="mb-4">Why I'm the Designer You Need</h2>
     <Motivations />
-  </div>
+  </section>
+</div>
+<div class="about-page">
+   <!-- Call to Action Section -->
+  <section class="container flex-1 min-w-[calc(50%-1rem)] p-4 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm bg-blue-100 dark:bg-blue-900 text-center">
+    <h2 class="text-2xl font-bold mb-4">Let's Work Together!</h2>
+    <CallToAction />
+  </section>
 </div>
 
 <style>
@@ -49,22 +70,8 @@ import { education } from '@src/data/education.tsx';
   }
 
   .container {
-    flex: 1 1 calc(50% - 1rem); /* Zwei Container pro Zeile */
     box-sizing: border-box;
     padding: 1rem;
-    border-radius: rounded-xl;
-    box-shadow: shadow-sm;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .container h2 {
-    margin-bottom: 1rem; /* Abstand zwischen Überschrift und Inhalt */
-  }
-
-  @media (max-width: 768px) {
-    .container {
-      flex: 1 1 100%; /* Ein Container pro Zeile auf kleineren Bildschirmen */
-    }
+    border-radius: 1rem; /* Beispielwert, passe nach Bedarf an */
   }
 </style>
