@@ -8,10 +8,10 @@ export interface Props {
 const { title, description, coverImage } = Astro.props;
 ---
 
-<section class="relative bg-gray-900 text-white dark:bg-gray-900 dark:text-white">
-  <img src={coverImage} alt={title} class="absolute inset-0 w-full h-full object-cover opacity-50 dark:opacity-30" />
-  <div class="relative max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-bold sm:text-4xl lg:text-5xl text-white dark:text-white">{title}</h1>
-    <p class="mt-4 text-lg sm:text-xl lg:text-2xl text-white dark:text-white">{description}</p>
+<section class="relative text-white bg-gray-900 dark:bg-gray-900 dark:text-white">
+  <img src={coverImage} alt={title} class="absolute inset-0 object-cover w-full h-full opacity-50 dark:opacity-30" />
+  <div class="relative max-w-4xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+    <h1 class="text-3xl font-bold text-white sm:text-4xl lg:text-5xl dark:text-white">{title}</h1>
+    <p class="mt-4 text-lg text-white sm:text-xl lg:text-2xl dark:text-white">{description}</p>
   </div>
 </section>

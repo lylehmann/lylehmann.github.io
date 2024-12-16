@@ -9,5 +9,5 @@
 		"outDir": "dist"
 	},
 	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro"],
-	"exclude": ["public", "node_modules", "dist"]
+	"exclude": ["node_modules"]
 }

@@ -1,72 +1,35 @@
 ---
-import { Image } from 'astro:assets';
-import type { Project } from '@src/pages/projects/projects';
-import { kFormatter } from '../utils';
-import { GithubIcon, GitHubSvg } from '@src/assets/svgs.tsx';
+import Card from '../layouts/components/Card.astro';
+import { projects } from '@src/data/projects.tsx';
 
-const { projects } = Astro.props;
+const formatDate = (date: { includes: (arg0: string) => any; split: (arg0: string) => [any, any]; }) => {
+    if (date.includes('-')) {
+        const [start, end] = date.split('-');
+        return { start: start.trim(), end: end.trim() };
+    }
+    return { start: date, end: '' };
+};
 ---
 
-<div class="grid grid-cols-12 gap-5">
-  {
-    projects.map((project: Project) =>
-      <div class="col-span-12 sm:col-span-6 lg:col-span-4 border dark:border-zinc-700 rounded-xl shadow-sm p-5">
-        <div class="flex justify-between items-center">
-          <div class='flex gap-2'>
-            {
-              (project.tags || [] )?.map((tag: string) => (
-                <span
-                  class='border border-zinc-300 dark:border-zinc-700 rounded-2xl
-                    text-sm text-zinc-700 dark:text-zinc-300 no-underline px-2 py-0.5
-                    transition-all duration-700
-                  hover:border-zinc-700 dark:hover:border-zinc-300'
-                  >
-                  {tag}
-                </span>
-              ))
-            }
-          </div>
-
-          {project.stargazers_count !== undefined && (
-            <div class='shrink-0'>
-              <a
-                href={project.html_url}
-                target="_blank"
-                class='border border-zinc-300 dark:border-zinc-700 rounded-2xl
-                    text-xs text-zinc-700 dark:text-zinc-300 no-underline px-2 py-0.5
-                    transition-all duration-700
-                  hover:border-zinc-700 dark:hover:border-zinc-300
-                    flex items-center gap-1
-              '>
-                <GithubIcon />
-                <GitHubSvg />
-                {kFormatter(project.stargazers_count)} stars
-              </a>
-            </div>
-          )}
-        </div>
-        <h3 class="font-semibold my-2">
-          <a class="underline" href={project.demoLink} target="_blank" rel={project.demoLinkRel}>{project.name}</a>
-        </h3>
-        <div class="line-clamp-2 text-zinc-600 dark:text-zinc-300 mb-4 min-h-[50px]">
-          <p>{project.description}</p>
-        </div>
-        <div class="flex justify-end gap-3">
-          {
-            project.postLink &&
-            <a class="underline flex items-center gap-2" href={project.postLink}>
-              Article
-            </a>
-          }
-          {
-            project.demoLink &&  // This line adds the conditional check for the Demo link
-            <a class="underline flex items-center gap-2" href={project.demoLink} target="_blank" rel={project.demoLinkRel}>
-              Demo
-              <GitHubSvg />
-            </a>
-          }
-        </div>
-      </div>
-    )
-  }
+<div class='grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3'>
+    {
+        Array.isArray(projects) && projects.map((project, index) => {
+            const { startDate, pubDate: endDate } = project;
+            return (
+                <div class='flex justify-center col-span-1'>
+                    <Card
+                        image={project.image}
+                        title={project.name}
+                        description={project.description}
+                        startDate={startDate}
+                        endDate={endDate}
+                        clientName={project.client}
+                        tags={project.tags}
+                        href={project.demoLink}
+                        variant="secondary"
+                    />
+                </div>
+            );
+        })
+    }
 </div>

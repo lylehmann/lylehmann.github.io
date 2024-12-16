@@ -1,0 +1,61 @@
+---
+import { projects } from '@src/data/projects';
+
+type Project = {
+    image?: string;
+    name: string;
+    description: string;
+    pubDate?: string;
+    client?: string;
+    tags: string[];
+    demoLink?: string;
+};
+import Tag from './Tag.astro';
+
+const { image, title, description, startDate, pubDate, clientName, tags = [], href, variant = 'primary', class: additionalClasses } = Astro.props;
+
+const cardClasses = variant === 'secondary'
+    ? 'border border-layer-floor1 dark:border-layer-floor1 bg-transparent dark:bg-transparent'
+    : 'border border-layer-floor1 dark:border-layer-floor1 bg-layer-floor1 dark:bg-layer-floor1';
+
+const hoverClasses = 'hover:shadow-lg hover:scale-105';
+
+const titleClasses = variant === 'secondary'
+    ? 'text-text-primary dark:text-text-onAccent'
+    : 'text-text-primary dark:text-primary';
+
+const descriptionClasses = variant === 'secondary'
+    ? 'text-text-secondary dark:text-text-onAccent'
+    : 'text-text-secondary dark:text-secondary';
+
+const infoClasses = variant === 'secondary'
+    ? 'text-text-tertiary dark:text-text-onAccent'
+    : 'text-text-tertiary dark:text-tertiary';
+
+const formatDate = (date: string | number | Date) => {
+    const d = new Date(date);
+    return d.getFullYear().toString();
+};
+---
+
+<div class={`block no-underline transition-transform duration-300 ease-in-out transform rounded-lg card ${cardClasses} ${hoverClasses} ${additionalClasses} w-80`}>
+    <a href={href} class='flex flex-col h-full no-underline'>
+        {image && <img src={image} alt={title} class='max-w-full rounded-t-lg card-image' />}
+        <div class='flex flex-col flex-grow m-4 card-content'>
+            {tags.length > 0 && (
+                <div class='my-4 space-y-2 card-tags'>
+                    {tags.map((tag: unknown) => (
+                        <Tag tag={tag} variant={variant} />
+                    ))}
+                </div>
+            )}
+            <h3 class={`mb-2 text-lg ${titleClasses}`}>{title}</h3> <!-- Hier wird die Schriftgröße angepasst -->
+            <p class={`mb-4 flex-grow ${descriptionClasses}`}>{description}</p>
+            <div class='mt-auto'>
+                {startDate && <p class={`mb-2 ${infoClasses}`}>{formatDate(startDate)}</p>}
+                {pubDate && <p class={`mb-2 ${infoClasses}`}>{formatDate(pubDate)}</p>}
+                {clientName && <p class={`mb-2 ${infoClasses}`}>{clientName}</p>}
+            </div>
+        </div>
+    </a>
+</div>
