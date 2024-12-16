@@ -9,9 +9,9 @@ import About from '@src/components/About.astro';
 
 <BaseLayout title='About Me' description='More about me.'>
 	<div class='container'>
-		<div class='w-full md:flex md:items-center gap-16 mb-10'>
+		<div class='w-full mb-10 md:flex md:items-center gap-16'>
 			<div class='text-pretty leading-9'>
-				<h1 class='text-4xl font-bold mb-4'>Hi 👋, I am Lukas</h1>
+				<h1 class='mb-4 text-4xl font-bold'>Hi 👋, I am Lukas</h1>
 				<Prose>
 					<div class='text-lg'>
 						<p>
@@ -21,7 +21,7 @@ import About from '@src/components/About.astro';
 					</div>
 				</Prose>
 			</div>
-			<Image src={Lukas} alt='Lukas Lehmann' width={300} loading='eager' class='rounded-3xl rotate-3 mx-4 md:mx-0' />
+			<Image src={Lukas} alt='Lukas Lehmann' width={300} loading='eager' class='mx-4 rounded-3xl rotate-3 md:mx-0' />
 		</div>
     <About />
 	</div>

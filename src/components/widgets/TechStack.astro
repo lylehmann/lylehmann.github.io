@@ -4,10 +4,10 @@ import { techStack } from '@src/data/techStack.tsx';
 import React from 'react';
 ---
 
-<div class="tech-stack p-5">
+<div class="p-5 tech-stack">
   <div class='flex flex-wrap gap-4'>
     {techStack.map((item) => (
-      <div class='inline-flex items-center bg-gray-200 dark:bg-gray-700 rounded-full px-4 py-2'>
+      <div class='inline-flex items-center px-4 py-2 bg-gray-200 rounded-full dark:bg-gray-700'>
         {item.icon && React.isValidElement(item.icon) && <item.icon.type class="w-6 h-6 mr-2" />}
         <span class='text-sm'>{item.text}</span>
       </div>

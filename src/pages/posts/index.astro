@@ -14,8 +14,8 @@ const posts = (await getCollection('blog')).sort((a: BlogPost, b: BlogPost) => b
 <BaseLayout title={title} description={description}>
 	<div class='container'>
 		<div class='mb-10'>
-			<h1 class='text-3xl font-bold mb-2'>{title}</h1>
-			<p class='text-zinc-700 dark:text-zinc-300 text-lg'>{description}</p>
+			<h1 class='mb-2 text-3xl font-bold'>{title}</h1>
+			<p class='text-lg text-zinc-700 dark:text-zinc-300'>{description}</p>
 		</div>
 		<PostsByYear posts={posts} />
 	</div>

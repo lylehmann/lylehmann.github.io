@@ -1,0 +1,24 @@
+---
+const {
+	href,
+	text,
+	variant = 'primary'
+} = Astro.props as { href: string; text: string; variant?: 'primary' | 'secondary' | 'positive' | 'negative' | 'cta' | 'text' };
+
+const variantClasses = {
+	primary:
+		'bg-fill-primary dark:bg-layer-dark-fill-primary text-text-onAccent dark:text-layer-dark-text-onAccent hover:bg-fill-secondary dark:hover:bg-layer-dark-fill-secondary',
+	secondary:
+		'border border-fill-primary dark:border dark:border-layer-dark-fill-primary text-fill-primary dark:text-layer-dark-fill-primary hover:border-fill-secondary dark:hover:border-layer-dark-fill-secondary',
+	positive:
+		'bg-fill-positive-primary dark:bg-dark-fill-positive-primary  text-onAccent dark:text-dark-text-onAccent hover:bg-fill-positive-secondary dark:hover:bg-dark-fill-positive-secondary',
+	negative:
+		'bg-fill-negative-primary dark:bg-dark-fill-negative-primary text-onAccent dark:text-dark-text-onAccent hover:bg-fill-negative-secondary dark:hover:bg-dark-fill-negative-secondary',
+	cta: 'bg-fill-brand-primary dark:bg-dark-fill-brand-primary  text-brand-onAccent dark:text-dark-text-onAccent hover:bg-fill-brand-secondary dark:hover:bg-dark-fill-brand-secondary',
+	text: 'text-fill-primary dark:text-layer-dark-fill-primary hover:underline text-left'
+};
+---
+
+<div class={`text-center mt-8 ${variant === 'text' ? 'text-left' : ''}`}>
+	<a href={href} class={`inline-block px-6 py-3 rounded-md no-underline font-bold ${variantClasses[variant]}`}>{text}</a>
+</div>
