@@ -8,12 +8,12 @@ export interface Props {
 const { title, description, image } = Astro.props;
 ---
 
-<div class='max-w-sm overflow-hidden bg-white rounded shadow-lg dark:bg-gray-800'>
-	<img class='w-full' src={image} alt={title} />
-	<div class='px-6 py-4'>
-		<div class='mb-2 text-xl font-bold text-gray-900 dark:text-white'>{title}</div>
-		<p class='text-base text-gray-700 dark:text-gray-400'>
-			{description}
-		</p>
-	</div>
+<div class="max-w-sm overflow-hidden bg-white rounded shadow-lg dark:bg-gray-800">
+  <img class="w-full" src={image} alt={title} />
+  <div class="px-6 py-4">
+    <div class="mb-2 text-xl font-bold text-gray-900 dark:text-white">{title}</div>
+    <p class="text-base text-gray-700 dark:text-gray-400">
+      {description}
+    </p>
+  </div>
 </div>

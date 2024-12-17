@@ -2,16 +2,14 @@
 import { skillStack } from '@src/data/skills.ts';
 ---
 
-<div class='p-5 skill-stack'>
-	<div class='flex flex-wrap gap-4'>
-		{
-			skillStack.map((item) => (
-				<div class='inline-flex items-center px-4 py-2 bg-gray-200 rounded-full dark:bg-gray-700'>
-					<span class='text-sm'>{item.text}</span>
-				</div>
-			))
-		}
-	</div>
+<div class="p-5 skill-stack">
+  <div class='flex flex-wrap gap-4'>
+    {skillStack.map((item) => (
+      <div class='inline-flex items-center px-4 py-2 bg-gray-200 rounded-full dark:bg-gray-700'>
+        <span class='text-sm'>{item.text}</span>
+      </div>
+    ))}
+  </div>
 </div>
 
 <style>

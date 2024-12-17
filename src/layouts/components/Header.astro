@@ -17,36 +17,36 @@ const menu = [
 ---
 
 <header id='site-header' class:list={['flex items-center w-full transition duration-300 z-[999] border-[var(--soft-border-color)]']}>
-	<div class='container'>
-		<nav class='flex items-center justify-between py-3 gap-4'>
-			<h2 class='m-0'>
-				<a href='/' class='flex items-center text-xl font-black uppercase gap-4'>
-					<!-- You can use your site logo, rounded ava or simply your site name here-->
-					<Image src={Logo} alt='Lukas Lehmann Portfolio' class='border-2 border-white rounded-full shadow-lg w-11' />
-					<!-- {SITE_TITLE} -->
-				</a>
-			</h2>
-			<div class='flex flex-wrap items-center justify-end space-x-2'>
-				<!-- E-Mail Button -->
-				<a class='p-2' href={`mailto:${email}`} target='_blank' rel='noopener noreferrer'>
-					<EmailIcon />
-				</a>
-				<!-- LinkedIn Button -->
-				<a class='p-2' href={linkedin} target='_blank' rel='noopener noreferrer'>
-					<LinkedInIcon />
-				</a>
-				<!-- GitHub Button -->
-				<a class='p-2' href={github} target='_blank' rel='noopener noreferrer'>
-					<GithubIcon />
-				</a>
-				<!-- Licht-/Dunkelmodus-Schalter -->
-				<button class='p-2' id='themeToggle' aria-label='Theme mode'>
-					<SunIcon />
-					<MoonIcon />
-				</button>
-			</div>
-		</nav>
-		<div class='fixed top-3 w-auto max-w-full px-3 left-1/2 -translate-x-1/2 z-[999]'>
+  <div class='container'>
+    <nav class='flex items-center justify-between py-3 gap-4'>
+      <h2 class='m-0'>
+        <a href='/' class='flex items-center text-xl font-black uppercase gap-4'>
+          <!-- You can use your site logo, rounded ava or simply your site name here-->
+          <Image src={Logo} alt='Lukas Lehmann Portfolio' class='border-2 border-white rounded-full shadow-lg w-11' />
+          <!-- {SITE_TITLE} -->
+        </a>
+      </h2>
+      <div class="flex flex-wrap items-center justify-end space-x-2">
+        <!-- E-Mail Button -->
+        <a class='p-2' href={`mailto:${email}`} target='_blank' rel='noopener noreferrer'>
+          <EmailIcon />
+        </a>
+        <!-- LinkedIn Button -->
+        <a class='p-2' href={linkedin} target='_blank' rel='noopener noreferrer'>
+          <LinkedInIcon />
+        </a>
+        <!-- GitHub Button -->
+        <a class='p-2' href={github} target='_blank' rel='noopener noreferrer'>
+          <GithubIcon />
+        </a>
+        <!-- Licht-/Dunkelmodus-Schalter -->
+        <button class='p-2' id='themeToggle' aria-label='Theme mode'>
+          <SunIcon />
+          <MoonIcon />
+        </button>
+      </div>
+    </nav>
+    <div class='fixed top-3 w-auto max-w-full px-3 left-1/2 -translate-x-1/2 z-[999]'>
 			<div class='flex px-2.5 bg-white/90 dark:bg-zinc-900/75 backdrop-blur-md leading-tight rounded-full border dark:border-zinc-700'>
 				<div class='px-2.5 text-sm'>
 					<HeaderLink class='flex items-center py-3' href='/' aria-label='Home'>

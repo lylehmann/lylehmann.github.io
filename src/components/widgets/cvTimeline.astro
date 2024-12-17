@@ -8,27 +8,25 @@ interface Props {
 const { timeline } = Astro.props;
 ---
 
-<div class='p-5 cv-timeline'>
-	<ol class='relative ml-6 border-l border-gray-200 dark:border-gray-700'>
-		{
-			timeline.map((item: TimelineItem) => (
-				<li class='mb-10 ml-6'>
-					<span class={`absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ${item.color}`}>
-						{item.svg ? (
-							<img src={`${item.svg}`} class='w-6 h-6' alt='timeline icon' />
-						) : (
-							<img src='/default-icon.svg' class='w-6 h-6' alt='default icon' />
-						)}
-					</span>
-					<span class='text-sm text-gray-600 dark:text-gray-400'>{item.date}</span>
-					<br />
-					<p class='text-sm font-semibold text-gray-800 dark:text-neutral-200'>{item.text}</p>
-					<span class='text-sm text-gray-600 dark:text-gray-400'>{item.place}</span>
-					<span class='text-sm text-gray-600 dark:text-gray-400'>{item.location}</span>
-				</li>
-			))
-		}
-	</ol>
+<div class="p-5 cv-timeline">
+  <ol class="relative ml-6 border-l border-gray-200 dark:border-gray-700">
+    {timeline.map((item: TimelineItem) => (
+      <li class="mb-10 ml-6">
+        <span class={`absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ${item.color}`}>
+          {item.svg ? (
+            <img src={`${item.svg}`} class="w-6 h-6" alt="timeline icon" />
+          ) : (
+            <img src="/default-icon.svg" class="w-6 h-6" alt="default icon" />
+          )}
+        </span>
+        <span class="text-sm text-gray-600 dark:text-gray-400">{item.date}</span>
+        <br />
+        <p class="text-sm font-semibold text-gray-800 dark:text-neutral-200">{item.text}</p>
+        <span class="text-sm text-gray-600 dark:text-gray-400">{item.place}</span>
+        <span class="text-sm text-gray-600 dark:text-gray-400">{item.location}</span>
+      </li>
+    ))}
+  </ol>
 </div>
 
 <style>

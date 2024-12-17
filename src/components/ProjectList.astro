@@ -2,35 +2,34 @@
 import Card from '../layouts/components/Card.astro';
 import { projects } from '@src/data/projects.tsx';
 
-const formatDate = (date: { includes: (arg0: string) => any; split: (arg0: string) => [any, any] }) => {
-	if (date.includes('-')) {
-		const [start, end] = date.split('-');
-		return { start: start.trim(), end: end.trim() };
-	}
-	return { start: date, end: '' };
+const formatDate = (date: { includes: (arg0: string) => any; split: (arg0: string) => [any, any]; }) => {
+    if (date.includes('-')) {
+        const [start, end] = date.split('-');
+        return { start: start.trim(), end: end.trim() };
+    }
+    return { start: date, end: '' };
 };
 ---
 
 <div class='grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3'>
-	{
-		Array.isArray(projects) &&
-			projects.map((project, index) => {
-				const { startDate, pubDate: endDate } = project;
-				return (
-					<div class='flex justify-center col-span-1'>
-						<Card
-							image={project.image}
-							title={project.name}
-							description={project.description}
-							startDate={startDate}
-							endDate={endDate}
-							clientName={project.client}
-							tags={project.tags}
-							href={project.demoLink}
-							variant='secondary'
-						/>
-					</div>
-				);
-			})
-	}
+    {
+        Array.isArray(projects) && projects.map((project, index) => {
+            const { startDate, pubDate: endDate } = project;
+            return (
+                <div class='flex justify-center col-span-1'>
+                    <Card
+                        image={project.image}
+                        title={project.name}
+                        description={project.description}
+                        startDate={startDate}
+                        endDate={endDate}
+                        clientName={project.client}
+                        tags={project.tags}
+                        href={project.demoLink}
+                        variant="secondary"
+                    />
+                </div>
+            );
+        })
+    }
 </div>
