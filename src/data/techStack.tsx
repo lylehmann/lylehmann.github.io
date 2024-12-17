@@ -1,34 +1,19 @@
-import {
-	FigmaSvg,
-	SketchSvg,
-	AdobeXdSvg,
-	HtmlSvg,
-	CssSvg,
-	JavascriptSvg,
-	NodeJsSvg,
-	AstroSvg,
-	GitSvg,
-	GitHubSvg,
-	WordPressSvg,
-	TerminalSvg
-} from '@src/assets/svgs';
-
 interface Skill {
-	icon?: React.ReactNode;
+	icon?: string; // Verwenden Sie string für den Pfad oder die URL des Icons
 	text: string;
 }
 
 export const techStack: Skill[] = [
-	{ icon: <FigmaSvg />, text: 'Figma' },
-	{ icon: <SketchSvg />, text: 'Sketch' },
-	{ icon: <AdobeXdSvg />, text: 'Adobe XD' },
-	{ icon: <HtmlSvg />, text: 'HTML' },
-	{ icon: <CssSvg />, text: 'CSS' },
-	{ icon: <JavascriptSvg />, text: 'JavaScript' },
-	{ icon: <NodeJsSvg />, text: 'Node.js' },
-	{ icon: <AstroSvg />, text: 'Astro' },
-	{ icon: <GitSvg />, text: 'Git' },
-	{ icon: <GitHubSvg />, text: 'GitHub' },
-	{ icon: <WordPressSvg />, text: 'WordPress' },
-	{ icon: <TerminalSvg />, text: 'Terminal' }
+	{ icon: '/assets/icons/figma.svg', text: 'Figma' },
+	{ icon: '/assets/icons/sketch.svg', text: 'Sketch' },
+	{ icon: '/assets/icons/adobe-xd.svg', text: 'Adobe XD' },
+	{ icon: '/assets/icons/html.svg', text: 'HTML' },
+	{ icon: '/assets/icons/css.svg', text: 'CSS' },
+	{ icon: '/assets/icons/javascript.svg', text: 'JavaScript' },
+	{ icon: '/assets/icons/nodejs.svg', text: 'Node.js' },
+	{ icon: '/assets/icons/astro.svg', text: 'Astro' },
+	{ icon: '/assets/icons/git.svg', text: 'Git' },
+	{ icon: '/assets/icons/github.svg', text: 'GitHub' },
+	{ icon: '/assets/icons/wordpress.svg', text: 'WordPress' },
+	{ icon: '/assets/icons/terminal.svg', text: 'Terminal' }
 ];
