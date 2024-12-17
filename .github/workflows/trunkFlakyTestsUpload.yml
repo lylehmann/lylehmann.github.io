@@ -1,0 +1,12 @@
+- name: Upload results
+    # Run this step even if the test step ahead fails
+    if: "!cancelled()"
+    uses: trunk-io/analytics-uploader@main
+    with:
+      # Path to your test results.
+      junit-paths: **/*.xml
+      # Provide your Trunk organization slug.
+      org-slug: lylehmann
+      # Provide your Trunk API token as a GitHub secret.
+      token: ${{ secrets.TRUNK_API_TOKEN }}
+    continue-on-error: true
