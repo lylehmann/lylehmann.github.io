@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vitest tests" tests="1" failures="0" errors="0" time="0.783">
-    <testsuite name="src/utils.test.ts" timestamp="2024-12-17T16:05:17.704Z" hostname="49b176cf-2fcf-4640-bed1-652761093aaa.fritz.box" tests="1" failures="0" errors="0" skipped="0" time="0.001431458">
-        <testcase classname="src/utils.test.ts" name="Utility Functions &gt; should return expected result" time="0.000691792">
+<testsuites name="vitest tests" tests="1" failures="0" errors="0" time="0.742">
+    <testsuite name="src/utils.test.ts" timestamp="2024-12-17T16:44:26.839Z" hostname="12dc6f80-afcf-4811-91cd-97e171e87a16.fritz.box" tests="1" failures="0" errors="0" skipped="0" time="0.001371">
+        <testcase classname="src/utils.test.ts" name="Utility Functions &gt; should return expected result" time="0.000653792">
         </testcase>
     </testsuite>
 </testsuites>

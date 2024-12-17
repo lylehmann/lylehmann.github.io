@@ -11,7 +11,7 @@ export default defineConfig({
 	// Example: Set the default page layout to a custom component
 	// layout: 'src/layouts/Default.astro',
 
-	site: 'https://lylehmann.github.io/',
+	site: 'https://lylehmann.com/',
 
 	integrations: [mdx(), sitemap(), partytown(), tailwind(), react()],
 
