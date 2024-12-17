@@ -9,44 +9,44 @@ const linkedin = import.meta.env.PUBLIC_LINKEDIN_URL || '#';
 const github = import.meta.env.PUBLIC_GITHUB_URL || '#';
 
 const menu = [
-  { label: 'About', link: '/about' },
-  { label: 'Projects', link: '/posts', class: 'projects' },
-  { label: 'Tags', link: '/tags' },
-  // Weitere Menüpunkte
+	{ label: 'About', link: '/about' },
+	{ label: 'Projects', link: '/posts', class: 'projects' },
+	{ label: 'Tags', link: '/tags' }
+	// Weitere Menüpunkte
 ];
 ---
 
 <header id='site-header' class:list={['flex items-center w-full transition duration-300 z-[999] border-[var(--soft-border-color)]']}>
-  <div class='container'>
-    <nav class='flex items-center justify-between py-3 gap-4'>
-      <h2 class='m-0'>
-        <a href='/' class='flex items-center text-xl font-black uppercase gap-4'>
-          <!-- You can use your site logo, rounded ava or simply your site name here-->
-          <Image src={Logo} alt='Lukas Lehmann Portfolio' class='border-2 border-white rounded-full shadow-lg w-11' />
-          <!-- {SITE_TITLE} -->
-        </a>
-      </h2>
-      <div class="flex flex-wrap items-center justify-end space-x-2">
-        <!-- E-Mail Button -->
-        <a class='p-2' href={`mailto:${email}`} target='_blank' rel='noopener noreferrer'>
-          <EmailIcon />
-        </a>
-        <!-- LinkedIn Button -->
-        <a class='p-2' href={linkedin} target='_blank' rel='noopener noreferrer'>
-          <LinkedInIcon />
-        </a>
-        <!-- GitHub Button -->
-        <a class='p-2' href={github} target='_blank' rel='noopener noreferrer'>
-          <GithubIcon />
-        </a>
-        <!-- Licht-/Dunkelmodus-Schalter -->
-        <button class='p-2' id='themeToggle' aria-label='Theme mode'>
-          <SunIcon />
-          <MoonIcon />
-        </button>
-      </div>
-    </nav>
-    <div class='fixed top-3 w-auto max-w-full px-3 left-1/2 -translate-x-1/2 z-[999]'>
+	<div class='container'>
+		<nav class='flex items-center justify-between py-3 gap-4'>
+			<h2 class='m-0'>
+				<a href='/' class='flex items-center text-xl font-black uppercase gap-4'>
+					<!-- You can use your site logo, rounded ava or simply your site name here-->
+					<Image src={Logo} alt='Lukas Lehmann Portfolio' class='border-2 border-white rounded-full shadow-lg w-11' />
+					<!-- {SITE_TITLE} -->
+				</a>
+			</h2>
+			<div class='flex flex-wrap items-center justify-end space-x-2'>
+				<!-- E-Mail Button -->
+				<a class='p-2' href={`mailto:${email}`} target='_blank' rel='noopener noreferrer'>
+					<EmailIcon />
+				</a>
+				<!-- LinkedIn Button -->
+				<a class='p-2' href={linkedin} target='_blank' rel='noopener noreferrer'>
+					<LinkedInIcon />
+				</a>
+				<!-- GitHub Button -->
+				<a class='p-2' href={github} target='_blank' rel='noopener noreferrer'>
+					<GithubIcon />
+				</a>
+				<!-- Licht-/Dunkelmodus-Schalter -->
+				<button class='p-2' id='themeToggle' aria-label='Theme mode'>
+					<SunIcon />
+					<MoonIcon />
+				</button>
+			</div>
+		</nav>
+		<div class='fixed top-3 w-auto max-w-full px-3 left-1/2 -translate-x-1/2 z-[999]'>
 			<div class='flex px-2.5 bg-white/90 dark:bg-zinc-900/75 backdrop-blur-md leading-tight rounded-full border dark:border-zinc-700'>
 				<div class='px-2.5 text-sm'>
 					<HeaderLink class='flex items-center py-3' href='/' aria-label='Home'>
@@ -80,66 +80,66 @@ const menu = [
 		</div>
 	</div>
 
-  <style is:global>
-    #themeToggle .moon {
-      display: none;
-    }
-    .dark #themeToggle .sun {
-      display: none;
-    }
-    .dark #themeToggle .moon {
-      display: block;
-    }
-    .projects {
-      white-space: nowrap;
-    }
-  </style>
+	<style is:global>
+		#themeToggle .moon {
+			display: none;
+		}
+		.dark #themeToggle .sun {
+			display: none;
+		}
+		.dark #themeToggle .moon {
+			display: block;
+		}
+		.projects {
+			white-space: nowrap;
+		}
+	</style>
 
-  <script is:inline>
-    const theme = (() => {
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return 'dark';
-      }
-      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-        return localStorage.getItem('theme');
-      }
-      return 'light';
-    })();
+	<script is:inline>
+		const theme = (() => {
+			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				return 'dark';
+			}
+			if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+				return localStorage.getItem('theme');
+			}
+			return 'light';
+		})();
 
-    if (theme === 'light') {
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.add('dark');
-    }
+		if (theme === 'light') {
+			document.documentElement.classList.remove('dark');
+		} else {
+			document.documentElement.classList.add('dark');
+		}
 
-    window.localStorage.setItem('theme', theme || '');
+		window.localStorage.setItem('theme', theme || '');
 
-    function sendMessage(message) {
-      const iframe = document.querySelector('iframe.giscus-frame');
-      if (!iframe) return;
-      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-    }
+		function sendMessage(message) {
+			const iframe = document.querySelector('iframe.giscus-frame');
+			if (!iframe) return;
+			iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+		}
 
-    const handleToggleClick = () => {
-      const element = document.documentElement;
-      element.classList.toggle('dark');
+		const handleToggleClick = () => {
+			const element = document.documentElement;
+			element.classList.toggle('dark');
 
-      const isDark = element.classList.contains('dark');
-      if (isDark) {
-        sendMessage({
-          setConfig: {
-            theme: 'dark_dimmed'
-          }
-        });
-      } else {
-        sendMessage({
-          setConfig: {
-            theme: 'light'
-          }
-        });
-      }
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    };
-    document.getElementById('themeToggle')?.addEventListener('click', handleToggleClick);
-  </script>
+			const isDark = element.classList.contains('dark');
+			if (isDark) {
+				sendMessage({
+					setConfig: {
+						theme: 'dark_dimmed'
+					}
+				});
+			} else {
+				sendMessage({
+					setConfig: {
+						theme: 'light'
+					}
+				});
+			}
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		};
+		document.getElementById('themeToggle')?.addEventListener('click', handleToggleClick);
+	</script>
 </header>

@@ -1,39 +1,39 @@
 ---
 import { getCollection } from 'astro:content';
-import Button from '@src/layouts/components/Button.astro';
 import Card from '@src/layouts/components/Card.astro';
+import Button from '@src/layouts/components/Button.astro';
 
 const caseStudies = await getCollection('blog');
-console.log(caseStudies); // Überprüfen Sie die Datenstruktur in der Konsole
 
 const formatDate = (date: string | number | Date) => {
-    const d = new Date(date);
-    return d.getFullYear().toString();
+	const d = new Date(date);
+	return d.getFullYear().toString();
 };
 ---
 
-<div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-  {caseStudies.map((post: any) => {
-    console.log(post); // Überprüfen Sie die Struktur jedes Posts
-    const start = post.data.startDate ? formatDate(post.data.startDate) : '';
-    const end = post.data.pubDate ? formatDate(post.data.pubDate) : '';
-    return (
-      <div class="col-span-1">
-        <Card
-          image={post.data.image}
-          title={post.data.title}
-          description={post.data.description}
-          startDate={start}
-          pubDate={end}
-          clientName={post.data.clientName}
-          tags={post.data.tags}
-          href={`/${post.slug}`} // Stellen Sie sicher, dass `post.slug` korrekt ist
-          variant="primary"
-          class="flex flex-col h-full"
-        />
-      </div>
-    );
-  })}
+<div class='grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3'>
+	{
+		caseStudies.map((post: any) => {
+			const start = post.data.startDate ? formatDate(post.data.startDate) : '';
+			const end = post.data.pubDate ? formatDate(post.data.pubDate) : '';
+			return (
+				<div class='col-span-1'>
+					<Card
+						image={post.data.coverImage?.src}
+						title={post.data.title}
+						description={post.data.description}
+						startDate={start}
+						pubDate={end}
+						clientName={post.data.clientName}
+						tags={post.data.tags}
+						href={`/${post.slug}`}
+						variant='primary'
+						class='flex flex-col h-full'
+					/>
+				</div>
+			);
+		})
+	}
 </div>
 
-<Button href="/posts/" text="View All Case Studies" variant="primary" />
+<Button href='/posts/' text='View All Case Studies' variant='primary' />

@@ -10,30 +10,32 @@ const { title, description, image } = Astro.props;
 
 <!doctype html>
 <html lang='en'>
-    <head>
-        <BaseHead title={title} description={description} image={image} />
-    </head>
-    <body class="pt-16 bg-layer-floor0  dark:bg-layer-dark-layer-floor0 text-text-primary dark:text-layer-dark-text-primary sm:pt-0">
-        <Header/>
-        <div class='py-8 min-h-[calc(100vh-160px)]'>
-            <slot />
-        </div>
-        <Footer/>
-        <!-- Google tag (gtag.js) -->
-    {
-      GTAG_MEASUREMENT_ID &&
-      <>
-        <script type='text/partytown' async src={'https://www.googletagmanager.com/gtag/js?id=' + GTAG_MEASUREMENT_ID}></script>
-        <script type='text/partytown' define:vars={{ GTAG_MEASUREMENT_ID }}>
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag('js', new Date());
-
-          gtag('config', GTAG_MEASUREMENT_ID);
-        </script>
-      </>
-    }
-    </body>
+	<head>
+		<BaseHead title={title} description={description} image={image} />
+	</head>
+	<body class='pt-16 bg-layer-floor0 dark:bg-layer-dark-layer-floor0 text-text-primary dark:text-layer-dark-text-primary sm:pt-0'>
+		<Header />
+		<div class='py-8 min-h-[calc(100vh-160px)]'>
+			<slot />
+		</div>
+		<Footer />
+		<!-- Google tag (gtag.js) -->
+		{
+			GTAG_MEASUREMENT_ID && (
+				<>
+					<script type='text/partytown' async src={'https://www.googletagmanager.com/gtag/js?id=' + GTAG_MEASUREMENT_ID} />
+					<script type='text/partytown'>
+						{`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag() {
+                            dataLayer.push(arguments);
+                        }
+                        gtag('js', new Date());
+                        gtag('config', '${GTAG_MEASUREMENT_ID}');
+                    `}
+					</script>
+				</>
+			)
+		}
+	</body>
 </html>

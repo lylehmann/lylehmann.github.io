@@ -19,67 +19,68 @@ type BlogPost = CollectionEntry<'blog'>;
 
 const top6Projects = projects.slice(0, 6);
 const posts = (await getCollection('blog'))
-    .sort((a: BlogPost, b: BlogPost) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-    .slice(0, 5);
+	.sort((a: BlogPost, b: BlogPost) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 5);
 ---
 
 <BaseLayout title={SITE_TITLE + ' - ' + SITE_TAGLINE} description={SITE_DESCRIPTION}>
-<div class="container">
-  <div class='w-full gap-16 mb-10 md:flex md:items-center'>
-    <div class='leading-9 text-pretty'>
-      <h1 class='mb-4 text-4xl font-bold'>Hi 👋, I am Lukas</h1>
-      <Prose>
-        <div class='text-lg'>
-          <p>
-            a Digital Product Designer on a mission to make technology accessible for all. My journey from disability care to UX/UI design
-            has given me a unique perspective on creating truly inclusive digital experiences.
-          </p>
-        </div>
-      </Prose>
-    </div>
-    <Image src={Lukas} alt='Lukas Lehmann' width={300} loading='eager' class='mx-4 rounded-3xl rotate-3 md:mx-0' />
-  </div>
-  <main>
-    <div class="py-20 space-y-32"> <!-- Fügt vertikalen Abstand zwischen den Abschnitten hinzu -->
-      <!-- What I Do Section -->
-      <section id="what-i-do" class="my-8">
-        <h2 class="mb-4 text-2xl font-bold">What I Do</h2>
-        <WhatIDo />
-      </section>
+	<div class='container'>
+		<div class='w-full gap-16 mb-10 md:flex md:items-center'>
+			<div class='leading-9 text-pretty'>
+				<h1 class='mb-4 text-4xl font-bold'>Hi 👋, I am Lukas</h1>
+				<Prose>
+					<div class='text-lg'>
+						<p>
+							a Digital Product Designer on a mission to make technology accessible for all. My journey from disability care to UX/UI design
+							has given me a unique perspective on creating truly inclusive digital experiences.
+						</p>
+					</div>
+				</Prose>
+			</div>
+			<Image src={Lukas} alt='Lukas Lehmann' width={300} loading='eager' class='mx-4 rounded-3xl rotate-3 md:mx-0' />
+		</div>
+		<main>
+			<div class='py-20 space-y-32'>
+				<!-- Fügt vertikalen Abstand zwischen den Abschnitten hinzu -->
+				<!-- What I Do Section -->
+				<section id='what-i-do' class='my-8'>
+					<h2 class='mb-4 text-2xl font-bold'>What I Do</h2>
+					<WhatIDo />
+				</section>
 
-      <!-- Recent Case Studies Section -->
-      <section id="recent-case-studies" class="my-8">
-        <h2 class="mb-4 text-2xl font-bold">What I am working on</h2>
-        <RecentCaseStudies />
-      </section>
+				<!-- Recent Case Studies Section -->
+				<section id='recent-case-studies' class='my-8'>
+					<h2 class='mb-4 text-2xl font-bold'>What I am working on</h2>
+					<RecentCaseStudies />
+				</section>
 
-            <!-- Other Projects Section -->
-      <section class="my-8">
-        <div class='flex justify-between gap-2 mb-1'>
-          <h2 class='mb-3 text-lg font-bold'>Other Projects</h2>
-        </div>
-        <ProjectList projects={top6Projects} />
-      </section>
+				<!-- Other Projects Section -->
+				<section class='my-8'>
+					<div class='flex justify-between gap-2 mb-1'>
+						<h2 class='mb-3 text-lg font-bold'>Other Projects</h2>
+					</div>
+					<ProjectList projects={top6Projects} />
+				</section>
 
-      <!-- Tools I Use Section -->
-      <section id="tools-i-use" class="my-8">
-        <h2 class="mb-4 text-2xl font-bold">Tools I Use</h2>
-        <ToolsIUse />
-      </section>
+				<!-- Tools I Use Section -->
+				<section id='tools-i-use' class='my-8'>
+					<h2 class='mb-4 text-2xl font-bold'>Tools I Use</h2>
+					<ToolsIUse />
+				</section>
 
-      <!-- Skill Stack Section -->
-      <section id="skill-stack" class="my-8">
-        <h2 class="mb-4 text-2xl font-bold">Skills I Use</h2>
-        <SkillStack />
-      </section>
+				<!-- Skill Stack Section -->
+				<section id='skill-stack' class='my-8'>
+					<h2 class='mb-4 text-2xl font-bold'>Skills I Use</h2>
+					<SkillStack />
+				</section>
 
-      <!-- Call to Action Section -->
-      <section id="call-to-action" class="p-6 my-8 text-center rounded-lg bg-fill-primary dark:bg-layer-dark-fill-primary">
-        <h2 class="mb-4 text-2xl font-bold">Let's Work Together!</h2>
-        <CallToAction />
-      </section>
-    </div>
-  </main>
-</div>
-<ProjectList />
+				<!-- Call to Action Section -->
+				<section id='call-to-action' class='p-6 my-8 text-center rounded-lg bg-fill-primary dark:bg-layer-dark-fill-primary'>
+					<h2 class='mb-4 text-2xl font-bold'>Let's Work Together!</h2>
+					<CallToAction />
+				</section>
+			</div>
+		</main>
+	</div>
+	<ProjectList />
 </BaseLayout>

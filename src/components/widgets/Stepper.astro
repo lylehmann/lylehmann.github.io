@@ -1,26 +1,26 @@
 ---
 export interface Props {
-  steps: Array<{
-    title: string;
-    description: string;
-  }>;
+	steps: Array<{
+		title: string;
+		description: string;
+	}>;
 }
 
 const { steps } = Astro.props;
 ---
 
-<ul class="flex flex-col items-start list-none">
-  {steps.map((step, index) => (
-    <li class="relative flex-1 mb-4" {...{ key: index }}>
-      <div class="flex items-center">
-        <div class="z-10 flex items-center justify-center w-8 h-8 bg-blue-100">
-          {/* Weitere Inhalte hier */}
-        </div>
-      </div>
-      <div class="ml-4">
-        <h3 class="text-lg font-semibold">{step.title}</h3>
-        <p class="text-sm text-gray-600">{step.description}</p>
-      </div>
-    </li>
-  ))}
+<ul class='flex flex-col items-start list-none'>
+	{
+		steps.map((step, index) => (
+			<li class='relative flex-1 mb-4' {...{ key: index }}>
+				<div class='flex items-center'>
+					<div class='z-10 flex items-center justify-center w-8 h-8 bg-blue-100'>{/* Weitere Inhalte hier */}</div>
+				</div>
+				<div class='ml-4'>
+					<h3 class='text-lg font-semibold'>{step.title}</h3>
+					<p class='text-sm text-gray-600'>{step.description}</p>
+				</div>
+			</li>
+		))
+	}
 </ul>

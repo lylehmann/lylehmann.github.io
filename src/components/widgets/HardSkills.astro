@@ -3,10 +3,12 @@ import { hardSkills } from '@src/data/hardSkills.tsx';
 ---
 
 <div class='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4'>
-  {hardSkills.map((item) => (
-    <div class='flex flex-col items-center'>
-      {item.icon && <div class="icon">{item.icon}</div>}
-      <span class='text'>{item.text}</span>
-    </div>
-  ))}
+	{
+		hardSkills.map((item) => (
+			<div class='flex flex-col items-center'>
+				{item.icon && <div class='icon'>{item.icon}</div>}
+				<span class='text'>{item.text}</span>
+			</div>
+		))
+	}
 </div>

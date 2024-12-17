@@ -1,28 +1,28 @@
 ---
 export interface Props {
-  projectType: string;
-  role: string;
-  contribution: string;
-  collaboration: string;
-  methodologies: string[];
-  tools: string[];
-  preview: string;
-  results: string;
+	projectType: string;
+	role: string;
+	contribution: string;
+	collaboration: string;
+	methodologies: string[];
+	tools: string[];
+	preview: string;
+	results: string;
 }
 
 const { projectType, role, contribution, collaboration, methodologies = [], tools = [], preview, results } = Astro.props;
 ---
 
-<div class="max-w-2xl p-6 mx-auto bg-white rounded-lg shadow-lg dark:bg-gray-800">
-  <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Project Overview</h2>
-  <p class="mb-4 text-gray-700 dark:text-gray-300"><strong>Project Type:</strong> {projectType}</p>
-  <p class="mb-4 text-gray-700 dark:text-gray-300"><strong>Role:</strong> {role}</p>
-  <p class="mb-4 text-gray-700 dark:text-gray-300"><strong>Contribution:</strong> {contribution}</p>
-  <p class="mb-4 text-gray-700 dark:text-gray-300"><strong>Collaboration:</strong> {collaboration}</p>
-  <p class="mb-4 text-gray-700 dark:text-gray-300"><strong>Methodologies:</strong> {methodologies.join(', ')}</p>
-  <p class="mb-4 text-gray-700 dark:text-gray-300"><strong>Tools:</strong> {tools.join(', ')}</p>
-  <div class="mb-4">
-    <img src={preview} alt="Project Preview" class="w-full h-auto rounded-lg shadow-md" />
-  </div>
-  <p class="mb-4 text-gray-700 dark:text-gray-300"><strong>Results:</strong> {results}</p>
+<div class='max-w-2xl p-6 mx-auto bg-white rounded-lg shadow-lg dark:bg-gray-800'>
+	<h2 class='mb-4 text-2xl font-bold text-gray-900 dark:text-white'>Project Overview</h2>
+	<p class='mb-4 text-gray-700 dark:text-gray-300'><strong>Project Type:</strong> {projectType}</p>
+	<p class='mb-4 text-gray-700 dark:text-gray-300'><strong>Role:</strong> {role}</p>
+	<p class='mb-4 text-gray-700 dark:text-gray-300'><strong>Contribution:</strong> {contribution}</p>
+	<p class='mb-4 text-gray-700 dark:text-gray-300'><strong>Collaboration:</strong> {collaboration}</p>
+	<p class='mb-4 text-gray-700 dark:text-gray-300'><strong>Methodologies:</strong> {methodologies.join(', ')}</p>
+	<p class='mb-4 text-gray-700 dark:text-gray-300'><strong>Tools:</strong> {tools.join(', ')}</p>
+	<div class='mb-4'>
+		<img src={preview} alt='Project Preview' class='w-full h-auto rounded-lg shadow-md' />
+	</div>
+	<p class='mb-4 text-gray-700 dark:text-gray-300'><strong>Results:</strong> {results}</p>
 </div>
