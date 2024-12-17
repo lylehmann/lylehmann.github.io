@@ -93,7 +93,7 @@
 		"scminput": false
 	},
 	"git.openRepositoryInParentFolders": "never",
-	"workbench.activityBar.location": "hidden",
+	"workbench.activityBar.location": "bottom",
 	"typescript.preferences.autoImportFileExcludePatterns": ["@radix-ui"],
 	"cSpell.enabledFiletypes": [
 		"!asciidoc",
@@ -135,5 +135,5 @@
 	],
 	"auto-close-tag.disableOnLanguage": [],
 	"cSpell.dictionaryDefinitions": [],
-	"cSpell.words": ["amet", "Lukas", "strikethrough", "svgs", "Telefon"]
+	"cSpell.words": ["amet", "Lukas", "strikethrough", "svgs", "Telefon", "zusätzliche"]
 }

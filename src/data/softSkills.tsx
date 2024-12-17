@@ -1,14 +1,11 @@
-import type { ReactNode } from 'react';
-import { FigmaSvg } from '@src/assets/svgs';
-
-interface Skill {
-	[x: string]: any;
-	icon?: ReactNode;
+interface SoftSkill {
+	icon: string; // Verwenden Sie string für den Pfad oder die URL des Icons
 	text: string;
 }
 
-export const softSkills: Skill[] = [
-	{ icon: <FigmaSvg />, text: 'Soft Skill 1' },
-	{ icon: <FigmaSvg />, text: 'Soft Skill 2' }
+export const softSkills: SoftSkill[] = [
+	{ icon: '/assets/icons/FigmaIcon.svg', text: 'Figma' },
+	{ icon: '/assets/icons/SketchIcon.svg', text: 'Sketch' },
+	{ icon: '/assets/icons/AdobeXDIcon.svg', text: 'Adobe XD' }
 	// Weitere Soft Skills hier
 ];

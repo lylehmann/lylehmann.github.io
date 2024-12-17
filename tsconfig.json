@@ -6,7 +6,10 @@
 		"paths": {
 			"@src/*": ["src/*"]
 		},
-		"outDir": "dist"
+		"outDir": "dist",
+		"jsx": "react",
+		"types": ["@types/react"]
+		// Weitere Optionen hier
 	},
 	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro"],
 	"exclude": ["node_modules"]
