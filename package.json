@@ -42,7 +42,6 @@
 		"text-encoding": "^0.7.0",
 		"typescript": "^5.5.4",
 		"unist-util-visit": "^5.0.0",
-		"@rollup/rollup-linux-x64-gnu": "^1.0.0",
 		"rollup": "^2.0.0",
 		"@rollup/plugin-node-resolve": "^13.0.0",
 		"@rollup/plugin-commonjs": "^19.0.0"
@@ -59,5 +58,5 @@
 		"vite": "^5.4.8",
 		"vitest": "^2.1.8"
 	},
-	"packageManager": "npm@10.9.2"
+	"packageManager": "npm@11.0.0"
 }
