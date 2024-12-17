@@ -1,20 +1,16 @@
 import React from 'react';
-import {
-	FigmaSvg,
-	SketchSvg,
-	AdobeXdSvg,
-	HtmlSvg,
-	CssSvg,
-	JavascriptSvg,
-	NodeJsSvg,
-	AstroSvg,
-	GitSvg,
-	GitHubSvg,
-	WordPressSvg,
-	TerminalSvg,
-	EducationSvg,
-	WorkSvg
-} from '@src/assets/svgs';
+import FigmaSvg from '@src/assets/icons/FigmaIcon.svg';
+import SketchSvg from '@src/assets/icons/SketchIcon.svg';
+import AdobeXdSvg from '@src/assets/icons/AdobeXDIcon.svg';
+import HtmlSvg from '@src/assets/icons/HtmlIcon.svg';
+import CssSvg from '@src/assets/icons/CssIcon.svg';
+import JavascriptSvg from '@src/assets/icons/JavascriptIcon.svg';
+import NodeJsSvg from '@src/assets/icons/NodeIcon.svg';
+import AstroSvg from '@src/assets/icons/AstroIcon.svg';
+import GitSvg from '@src/assets/icons/GitIcon.svg';
+import GitHubSvg from '@src/assets/icons/GitHubIcon.svg';
+import WordPressSvg from '@src/assets/icons/WordpressIcon.svg';
+import TerminalSvg from '@src/assets/icons/TerminalIcon.svg';
 
 type LanguageLevel = 'Native' | 'Fluent' | 'Intermediate' | 'Basic';
 
@@ -25,6 +21,7 @@ interface Language {
 
 interface Skill {
 	name: string;
+	skillStack?: StackItem[];
 	languages?: { name: string; level: LanguageLevel }[];
 	timeline?: {
 		date: string;
@@ -40,7 +37,6 @@ interface Skill {
 		date: string;
 	}[];
 	techStack?: { name: string; icon: React.ComponentType }[];
-	skillStack?: { text: string; type: string }[];
 	motivation?: {
 		name: string;
 		description: string;
@@ -50,7 +46,7 @@ interface Skill {
 type StackItem = {
 	text: string;
 	type: string;
-	icon: (props: React.SVGProps<SVGSVGElement>) => React.ReactElement;
+	icon: React.ComponentType;
 };
 
 export const techStack: StackItem[] = [

@@ -1,0 +1,37 @@
+{
+	"extends": [
+		"stylelint-config-recommended",
+		"stylelint-config-recommended-scss",
+		"stylelint-config-tailwindcss",
+		"stylelint-config-prettier"
+	],
+	"plugins": ["stylelint-order", "stylelint-prettier"],
+	"rules": {
+		"prettier/prettier": true,
+		"order/order": ["custom-properties", "declarations"],
+		"order/properties-order": [
+			"position",
+			"top",
+			"right",
+			"bottom",
+			"left",
+			"z-index",
+			"display",
+			"flex",
+			"justify-content",
+			"align-items",
+			"width",
+			"height",
+			"margin",
+			"padding",
+			"font-size",
+			"color",
+			"background",
+			"border"
+		],
+		"color-hex-length": "short",
+		"block-no-empty": true,
+		"unit-whitelist": ["em", "rem", "%", "s"]
+	},
+	"ignoreFiles": ["node_modules/**/*", "dist/**/*"]
+}

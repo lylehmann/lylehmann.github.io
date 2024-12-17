@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vitest tests" tests="2" failures="0" errors="0" time="0.561">
-    <testsuite name="src/utils.test.ts" timestamp="2024-12-17T12:56:40.374Z" hostname="6a33fb5a-9320-4cea-af9a-8b1122b252d7.fritz.box" tests="1" failures="0" errors="0" skipped="0" time="0.001372042">
-        <testcase classname="src/utils.test.ts" name="Utility Functions &gt; should return expected result" time="0.000666584">
-        </testcase>
-    </testsuite>
-    <testsuite name="src/assets/svgs.test.ts" timestamp="2024-12-17T12:56:40.375Z" hostname="6a33fb5a-9320-4cea-af9a-8b1122b252d7.fritz.box" tests="1" failures="0" errors="0" skipped="0" time="0.001360042">
-        <testcase classname="src/assets/svgs.test.ts" name="SVG Components &gt; should render correctly" time="0.00066025">
+<testsuites name="vitest tests" tests="1" failures="0" errors="0" time="0.752">
+    <testsuite name="src/utils.test.ts" timestamp="2024-12-17T15:40:27.189Z" hostname="a45383cd-0158-4edf-a45e-aebe95e22187.fritz.box" tests="1" failures="0" errors="0" skipped="0" time="0.001404917">
+        <testcase classname="src/utils.test.ts" name="Utility Functions &gt; should return expected result" time="0.000745792">
         </testcase>
     </testsuite>
 </testsuites>
