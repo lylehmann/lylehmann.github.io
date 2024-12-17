@@ -1,0 +1,5 @@
+---
+const { src, alt, className } = Astro.props;
+---
+
+{src && <img src={src} alt={alt || ''} class={className} />}

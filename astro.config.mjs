@@ -13,5 +13,9 @@ export default defineConfig({
 
 	site: 'https://lylehmann.github.io/',
 
-	integrations: [mdx(), sitemap(), partytown(), tailwind(), react()]
+	integrations: [mdx(), sitemap(), partytown(), tailwind(), react()],
+
+	experimental: {
+		responsiveImages: true
+	}
 });

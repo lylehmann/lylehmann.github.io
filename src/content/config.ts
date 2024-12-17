@@ -12,7 +12,7 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			tags: z.array(z.string()).optional(),
-			image: image().optional(),
+			coverImage: image().optional(), // Sicherstellen, dass coverImage definiert ist
 			clientName: z.string().optional() // Hinzufügen des clientName-Feldes
 		})
 });

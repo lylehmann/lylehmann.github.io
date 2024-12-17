@@ -2,7 +2,7 @@
 import { clientData } from '@src/data/clientData.tsx';
 
 interface Props {
-  cid: string;
+	cid: string;
 }
 
 const { cid } = Astro.props as Props;
@@ -11,8 +11,8 @@ const { clientName, clientDescription, clientImage } = clientInfo;
 ---
 
 <div>
-  <h2>About the Client</h2>
-  <p><strong>Name:</strong> {clientName}</p>
-  <p><strong>Description:</strong> {clientDescription}</p>
-  {clientImage && <img src={clientImage} alt={clientName} />}
+	<h2>About the Client</h2>
+	<p><strong>Name:</strong> {clientName}</p>
+	<p><strong>Description:</strong> {clientDescription}</p>
+	{clientImage && <img src={clientImage} alt={clientName} />}
 </div>

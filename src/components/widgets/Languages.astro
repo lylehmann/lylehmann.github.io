@@ -2,38 +2,40 @@
 type LanguageLevel = 'Native' | 'Fluent' | 'Intermediate' | 'Basic';
 
 const languageLevels: { [key in LanguageLevel]: number } = {
-  Native: 100,
-  Fluent: 75,
-  Intermediate: 50,
-  Basic: 25,
+	Native: 100,
+	Fluent: 75,
+	Intermediate: 50,
+	Basic: 25
 };
 
 const skills = [
-  { name: 'German', level: 'Native' },
-  { name: 'English', level: 'Fluent' },
-  { name: 'Hebrew', level: 'Intermediate' },
-  // Weitere Sprachen
+	{ name: 'German', level: 'Native' },
+	{ name: 'English', level: 'Fluent' },
+	{ name: 'Hebrew', level: 'Intermediate' }
+	// Weitere Sprachen
 ];
 ---
 
 <div class='p-5'>
-  <div class='mt-2'>
-    {skills.map((item) => (
-      <div class='mb-4'>
-        <div class='flex justify-between mb-1'>
-          <span>{item.name}</span>
-          <span>{languageLevels[item.level as LanguageLevel]}</span>
-        </div>
-        <div class='w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
-          <div class='bg-blue-600 h-2.5 rounded-full' style={`width: ${languageLevels[item.level as LanguageLevel]}%`}></div>
-        </div>
-      </div>
-    ))}
-  </div>
+	<div class='mt-2'>
+		{
+			skills.map((item) => (
+				<div class='mb-4'>
+					<div class='flex justify-between mb-1'>
+						<span>{item.name}</span>
+						<span>{languageLevels[item.level as LanguageLevel]}</span>
+					</div>
+					<div class='w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
+						<div class='bg-blue-600 h-2.5 rounded-full' style={`width: ${languageLevels[item.level as LanguageLevel]}%`} />
+					</div>
+				</div>
+			))
+		}
+	</div>
 </div>
 
 <style>
-  .languages {
-    margin: 0 1rem 1rem 1rem; /* Reduziert margin-top um 1rem */
-  }
+	.languages {
+		margin: 0 1rem 1rem 1rem; /* Reduziert margin-top um 1rem */
+	}
 </style>

@@ -29,6 +29,4 @@ function groupPostsByYear(posts: BlogPost[]) {
 const groupedPosts = groupPostsByYear(posts);
 ---
 
-{posts.map((post: BlogPost) => (
-  <PostItem post={post} />
-))}
+{posts.map((post: BlogPost) => <PostItem post={post} />)}
