@@ -2,7 +2,11 @@
 import HeaderLink from './HeaderLink.astro';
 import { Image } from 'astro:assets';
 import Logo from '@src/assets/img/small-lylehmann.jpg';
-import { SunIcon, MoonIcon, EmailIcon, GithubIcon, LinkedInIcon } from '@src/assets/svgs';
+import SunIcon from '@src/assets/icons/SunIcon.svg';
+import MoonIcon from '@src/assets/icons/MoonIcon.svg';
+import EmailIcon from '@src/assets/icons/EmailIcon.svg';
+import GithubIcon from '@src/assets/icons/GithubIcon.svg';
+import LinkedInIcon from '@src/assets/icons/LinkedinIcon.svg';
 
 const email = import.meta.env.PUBLIC_EMAIL || 'Email not set';
 const linkedin = import.meta.env.PUBLIC_LINKEDIN_URL || '#';
@@ -29,21 +33,16 @@ const menu = [
       <div class="flex flex-wrap items-center justify-end space-x-2">
         <!-- E-Mail Button -->
         <a class='p-2' href={`mailto:${email}`} target='_blank' rel='noopener noreferrer'>
-          <EmailIcon />
-        </a>
-        <!-- LinkedIn Button -->
-        <a class='p-2' href={linkedin} target='_blank' rel='noopener noreferrer'>
-          <LinkedInIcon />
+          <EmailIcon class='w-6 h-6' />
         </a>
         <!-- GitHub Button -->
         <a class='p-2' href={github} target='_blank' rel='noopener noreferrer'>
-          <GithubIcon />
+          <GithubIcon class='w-6 h-6' />
         </a>
-        <!-- Licht-/Dunkelmodus-Schalter -->
-        <button class='p-2' id='themeToggle' aria-label='Theme mode'>
-          <SunIcon />
-          <MoonIcon />
-        </button>
+        <!-- LinkedIn Button -->
+        <a class='p-2' href={linkedin} target='_blank' rel='noopener noreferrer'>
+          <LinkedInIcon class='w-6 h-6' />
+        </a>
       </div>
     </nav>
     <div class='fixed top-3 w-auto max-w-full px-3 left-1/2 -translate-x-1/2 z-[999]'>

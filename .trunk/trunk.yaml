@@ -41,4 +41,3 @@ merge:
     - Trunk Check
     - Unit tests & test coverage
     # Add more required statuses here
-# Removed the 'tasks' section as it is not recognized by Trunk
